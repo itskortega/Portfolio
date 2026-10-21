@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Re-imagining Harvard Library’s Search Experience · Kelly Ortega</title>
+  <meta name="description" content="How do users search for specific keywords across a large volume of documents?">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a href="index.html" class="nav__home">home</a>
+    <nav class="nav__links">
+      <a href="index.html#work">work</a>
+      <a href="about.html">about</a>
+    </nav>
+  </header>
+
+  <main class="cs">
+
+    <!-- ===== Title block ===== -->
+    <section class="cs__hero">
+      <figure class="cs__cover">
+        <img src="images/search-title.png" width="1499" height="678" alt="Close-up of a digitized newspaper page with the phrase quid pro quo highlighted in red">
+      </figure>
+
+      <h1 class="cs__title">Re-imagining Harvard Library’s Search Experience</h1>
+      <p class="cs__question">How do users search for specific keywords across a large volume of documents?</p>
+
+      <dl class="cs__meta">
+        <div class="meta__item">
+          <dt>team</dt>
+          <dd>UX Research Intern<br>Library Intern<br>Sr. UX Researcher</dd>
+        </div>
+        <div class="meta__item">
+          <dt>my role</dt>
+          <dd>UX Research Intern</dd>
+        </div>
+        <div class="meta__item">
+          <dt>tools</dt>
+          <dd>Dovetail<br>Figma</dd>
+        </div>
+        <div class="meta__item">
+          <dt>duration</dt>
+          <dd>2 months</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ===== Sticky nav + content ===== -->
+    <div class="cs__layout">
+
+      <nav class="toc" aria-label="On this page">
+        <a class="toc__back" href="index.html#work">← back to work</a>
+        <ul class="toc__list">
+          <li><a href="#summary">quick summary</a></li>
+          <li><a href="#context">context</a></li>
+          <li><a href="#landscape">landscape</a></li>
+          <li><a href="#methods">methods</a></li>
+          <li><a href="#insights">insights</a></li>
+          <li><a href="#impact">impact</a></li>
+          <li><a href="#learnings">learnings</a></li>
+          <li><a href="#contribution">my contribution</a></li>
+        </ul>
+      </nav>
+
+      <div class="cs__content">
+
+        <!-- quick summary -->
+        <section class="cs__section" id="summary">
+          <div class="callout callout--red callout--tint">
+            <p class="cs__eyebrow">quick summary</p>
+            <p class="cs__p">Harvard Library’s full-text search was limited, had few features and few users, and the team needed evidence on what works before redesigning it.</p>
+            <p class="cs__p">I led 11 moderated usability sessions with Harvard students on two mature platforms, Library of Congress and HathiTrust, then analyzed the sessions into six insights and six recommendations. I delivered actionable insights, lo-fi wireframes, and an evidence-based feature set. The UX &amp; D team is moving forward with the redesign as part of their next large-scale initiative.</p>
+          </div>
+        </section>
+
+        <!-- context -->
+        <section class="cs__section" id="context">
+          <p class="cs__eyebrow">context</p>
+          <p class="cs__p">Imagine you’re researching a paper and need every source that mentions a specific word or phrase. With thousands or millions of documents, reading through them isn’t realistic. You need a search mode that looks inside the documents for you, with results clear enough to show which documents are worth opening.</p>
+          <div class="callout callout--red callout--tint callout--center">
+            <p class="statement__text">Full-text search is a search mode for finding specific keywords inside large volumes of documents, <mark>similar to CTRL+F.</mark></p>
+          </div>
+          <p class="cs__p">The bigger the collection, the more essential full-text search becomes. Harvard Library has 11.1 million digital items.</p>
+          <p class="cs__p">Harvard Library offered a basic version of full-text search on its site, but the version was limited. It had few features, was a standalone page, and, as a result, it had few users.</p>
+
+
+          <p class="cs__eyebrow cs__eyebrow--next">goal</p>
+          <p class="cs__p">Harvard wanted to redesign its full-text search experience, but first it needed a foundation of best practices from which to build from. The aim of this study was to understand how users search inside large collections of documents by testing two mature platforms, then translate what we learned into recommendations and wireframes.</p>
+          <div class="callout callout--red callout--tint callout--center">
+            <p class="statement__text">How might we make Harvard’s full-text search easier to find, understand, and use?</p>
+          </div>
+
+          <p class="cs__eyebrow cs__eyebrow--next">key research questions</p>
+          <ul class="cs__list">
+            <li>Do users understand what full text search is doing in the context of a general search?</li>
+            <li>What labels do they actually understand?</li>
+            <li>What makes a search result readable? What do users look at first, what do they ignore?</li>
+            <li>Can users complete key tasks associated with full text search (e.g. copy-paste, citations, rights &amp; access).</li>
+          </ul>
+
+          <p class="cs__eyebrow cs__eyebrow--next">who uses full-text search?</p>
+          <p class="cs__p">Anyone who searches Harvard Library’s collections, mainly students, faculty, and researchers at all levels (undergraduate, graduate, postdoc, and faculty), often to find sources for research. This study tested with Harvard students.</p>
+        </section>
+
+        <!-- landscape -->
+        <section class="cs__section" id="landscape">
+          <p class="cs__eyebrow">understanding the landscape</p>
+          <p class="cs__p">I compared the full-text search experience across three sites by examining different aspects, like features, display, and specific pages that were important to the full-text search experience. As I compared the three sites, I created a table comparing the features. Since we don’t have enough time for participants to complete usability tasks across three sites, the table I created helped me narrow it down to two of the platforms for usability testing — Library of Congress (LOC) and HathiTrust — chosen based on their contrasting features and fit with our research goals.</p>
+
+          <p class="cs__p">LOC and HathiTrust took different approaches to the same problems, which let each session test distinct search experience design bets.</p>
+          <p class="cs__p">Importantly, I decided we would test two parts of the search platforms: the search results page and the full view page. The search results page is what the user first encounters when searching for a term and the full view is the page the user encounters after clicking on a result. Both of these are crucial parts of the search experience.</p>
+          <figure class="fig fig--pair">
+            <div class="fig__frame">
+                <img src="images/search-results-loc.png" width="636" height="792" loading="lazy" alt="Library of Congress Chronicling America collection items page in gallery view with the search term highlighted">
+              </div>
+            <div class="fig__frame">
+                <img src="images/search-results-hathitrust.png" width="631" height="786" loading="lazy" alt="HathiTrust search results list with thumbnails, Catalog Record and Full View buttons">
+              </div>
+          </figure>
+          <p class="cs__p"><strong>Search Results: LOC &amp; HathiTrust</strong></p>
+          <figure class="fig fig--pair">
+            <div class="fig__frame">
+                <img src="images/search-full-view-loc.png" width="800" height="458" loading="lazy" alt="Library of Congress item viewer with transcribed text beside the page image">
+              </div>
+            <div class="fig__frame">
+                <img src="images/search-full-view-hathitrust.png" width="1449" height="829" loading="lazy" alt="HathiTrust item viewer with the Search in This Text sidebar beside the page text">
+              </div>
+          </figure>
+          <p class="cs__p"><strong>Full View: LOC &amp; HathiTrust</strong></p>
+
+          <div class="callout callout--red callout--tint cs__eyebrow--next">
+            <p class="cs__eyebrow">decision: benchmark instead of testing our own site</p>
+            <p class="cs__p">Why test other search platforms instead of evaluating our own? Harvard’s existing version had limited features and low usage, so testing it would have shown what was missing but not what works. Benchmarking mature platforms lets us see which design choices help users succeed, so the redesign could build on proven patterns.</p>
+          </div>
+        </section>
+
+        <!-- methods -->
+        <section class="cs__section" id="methods">
+          <p class="cs__eyebrow">research methods: usability testing</p>
+          <p class="cs__p">We ran 11 moderated usability sessions with Harvard students, asking each to complete key full text search tasks (searching, reading results, copy-paste, finding citation and rights info) across two live sites, LOC and HathiTrust. Each session lasted 30-45 minutes.</p>
+          <p class="cs__p">Example task: “Imagine you are doing research for a paper and you want to find materials that contain the word “soccer”. How would you do so within this website?”</p>
+          <p class="cs__p">*I counterbalanced the order in which participants used the two websites to mitigate ordering effects.</p>
+
+          <p class="cs__eyebrow cs__eyebrow--next">research analysis: affinity diagramming</p>
+          <p class="cs__p">Following usability testing, our team used Dovetail to code the transcripts by tagging data into buckets: positive, negative, behaviors, expectation, confusion, and observation. Then, we analyzed the tagged data and observations through affinity diagramming to identify major key findings.</p>
+
+        </section>
+
+        <!-- insights and recommendations -->
+        <section class="cs__section" id="insights">
+          <p class="cs__eyebrow">key insights and recommendations</p>
+
+          <article class="block block--first">
+            <p class="block__label">insight 01</p>
+            <h3 class="block__title">Highlighting was the strongest signal that the search went inside the document.</h3>
+            <p class="cs__p">Users didn’t actually understand what “full text search” meant on the search results page, but seeing the matched term highlighted showed them the search had gone inside the documents. <strong>Highlighting served as a visual cue :</strong></p>
+            <ul class="cs__list">
+              <li>Salient</li>
+              <li>Easy to quickly understand</li>
+            </ul>
+            <p class="cs__p">When we asked users which site they preferred for full text search, most reported LOC over HathiTrust for this key reason.</p>
+
+            <figure class="fig">
+              <div class="fig__frame">
+                <img src="images/search-insight-01-highlighting.png" width="836" height="624" loading="lazy" alt="Three newspaper search results with the matched term soccer highlighted in the thumbnails and snippets">
+              </div>
+            </figure>
+          </article>
+
+          <article class="block block--pair">
+            <p class="block__label">insight 01 —&gt; recommendation 01</p>
+            <h3 class="block__title">So, highlight the matched term everywhere it appears on the result.</h3>
+            <p class="cs__p">Highlight it in the thumbnail and the snippet, so the search type is obvious without having to read a label.</p>
+
+          </article>
+
+          <article class="block">
+            <p class="block__label">insight 02</p>
+            <h3 class="block__title">People used peripheral cues to judge a result's relevance before clicking.</h3>
+            <p class="cs__p">People made fast relevance judgements and valued cues on the result card that let them do it:</p>
+            <ul class="cs__list">
+              <li>Number of matches for the search term</li>
+              <li>The thumbnail image</li>
+              <li>Clear title, author, and date</li>
+              <li>Users mentioned wanting longer snippets with the search word inside so they could better judge relevancy.</li>
+            </ul>
+          </article>
+
+          <article class="block block--pair">
+            <p class="block__label">insight 02 —&gt; recommendation 02</p>
+            <h3 class="block__title">So, build the search result card to allow users to make quick relevancy judgements.</h3>
+            <p class="cs__p">Include the match count, thumbnail image, and add a longer snippet that shows the term in context so people can judge a result’s relevance before opening it.</p>
+            <p class="cs__p">Users also wanted to understand and control the ranking to find relevant items quicker, so add a clear sort control and an info icon explaining how relevance is determined.</p>
+
+            <figure class="fig">
+              <div class="fig__frame">
+                <img src="images/search-rec-02-wireframe.png" width="1432" height="456" loading="lazy" alt="Low-fidelity wireframe of a search result card with match count, thumbnail, longer snippet, sort control, and info icon">
+              </div>
+            </figure>
+          </article>
+
+          <article class="block">
+            <p class="block__label">insight 03</p>
+            <h3 class="block__title">Users liked HathiTrust's "Search in this Text" for in-document search.</h3>
+            <p class="cs__p">What stood out to users:</p>
+            <ul class="cs__list">
+              <li>Each match showed surrounding context, so people could gauge how relevant an excerpt was before clicking</li>
+              <li>Clearly labeled and easy to find in the sidebar</li>
+            </ul>
+            <p class="cs__p">Also, users explained that they understood searching inside of a document as ctrl+f</p>
+          </article>
+
+          <article class="block block--pair">
+            <p class="block__label">insight 03 —&gt; recommendation 03</p>
+            <h3 class="block__title">So, add “Search in this Text” in the sidebar, with snippets and a Ctrl+F-style step-through to jump between matches.</h3>
+
+            <figure class="fig">
+              <div class="fig__frame">
+                <img src="images/search-rec-03-wireframe.png" width="1732" height="791" loading="lazy" alt="Low-fidelity full view wireframe with a Search in this Text sidebar, match snippets, and step-through controls">
+              </div>
+            </figure>
+          </article>
+
+          <article class="block">
+            <p class="block__label">insight 04</p>
+            <h3 class="block__title">Labels that named an action or described what the user would receive were better understood.</h3>
+            <ul class="cs__list">
+              <li>Confusing: "Catalog Record" (people didn't expect it to lead to item info) and "Pages (Full Text)" (couldn't tell if it changed what was searched or what was shown)</li>
+              <li>Clear: "Full View", "Search in this Text", “Plain Text”. People understood because the label described what they'd get or what it would do.</li>
+              <li>Participants suggested fixes that reflected this idea — e.g. "Search inside the documents" in place of Full Text Search” or “Pages (Full Text)“</li>
+            </ul>
+          </article>
+
+          <article class="block block--pair">
+            <p class="block__label">insight 04 —&gt; recommendation 04</p>
+            <h3 class="block__title">So, name the output instead of the system concept. Use "Search inside all texts," "Plain Text," "About this Item".</h3>
+
+            <figure class="fig">
+              <div class="fig__frame">
+                <img src="images/search-rec-04-wireframe.png" width="839" height="330" loading="lazy" alt="Low-fidelity wireframe of a search bar with a Search inside all texts button above a result card with Full View and About this Item buttons">
+              </div>
+            </figure>
+          </article>
+
+          <article class="block">
+            <p class="block__label">insight 05</p>
+            <h3 class="block__title">Users didn't trust the transcribed text, so they avoided it.</h3>
+            <ul class="cs__list">
+              <li>The transcribed text had visible errors: broken structure, garbled characters. One participant called it "gibberish" and left before coming back to it.</li>
+              <li>The errors annoyed users and several doubted the search itself, wondering whether it had actually caught every instance of their term.</li>
+              <li>People referred back to the original document so they could check the transcribed text themselves before relying on it.</li>
+            </ul>
+          </article>
+
+          <article class="block block--pair">
+            <p class="block__label">insight 05 —&gt; recommendation 05</p>
+            <h3 class="block__title">So, design to support text and image verification.</h3>
+            <p class="cs__p">Ideally, we would improve the accuracy of the transcribed text, but we also recommend:</p>
+            <ul class="cs__list">
+              <li>Keeping the scan beside the text so people can check a passage while they read the text.</li>
+              <li>Highlighting matches in both versions</li>
+              <li>Considering adding a transcription accuracy indicator in the sidebar with:
+                <ul>
+                  <li>Explanation for how it works</li>
+                  <li>Estimated accuracy</li>
+                </ul>
+              </li>
+            </ul>
+          </article>
+
+          <article class="block">
+            <p class="block__label">insight 06</p>
+            <h3 class="block__title">Users couldn't copy text the way they expected, so they created complex, creative workarounds.</h3>
+            <ul class="cs__list">
+              <li>Nearly everyone tried to highlight and copy text from the viewer, and it didn't work.</li>
+              <li>When that failed, they improvised: downloading the entire file to copy from it, trying to copy from a sidebar snippet, and taking out their iPhone, photographing the screen, and extracting the digitized text from the photo.</li>
+              <li>The plain-text view that would have let them copy <em>did</em> exist but <strong>it was buried in an image-manipulation menu</strong> instead of the special-features sidebar where users expected.</li>
+            </ul>
+          </article>
+
+          <article class="block block--pair">
+            <p class="block__label">insight 06 —&gt; recommendation 06</p>
+            <h3 class="block__title">So, move the plain-text view into the sidebar where people look and, if possible, make text selectable in the image viewer.</h3>
+
+            <figure class="fig">
+              <div class="fig__frame">
+                <img src="images/search-rec-06-wireframe.png" width="1732" height="323" loading="lazy" alt="Low-fidelity full view wireframe with the plain-text view in the sidebar">
+              </div>
+            </figure>
+          </article>
+
+          
+          <figure class="fig">
+            <div class="fig__frame">
+              <img src="images/search-wireframe-search-results.png" width="1732" height="1014" loading="lazy" alt="Low-fidelity wireframe of the redesigned search results page">
+            </div>
+          </figure>
+          <p class="cs__p"><strong>Search Results Wireframe</strong></p>
+
+          
+          <figure class="fig fig--spaced">
+            <div class="fig__frame">
+              <img src="images/search-wireframe-full-view.png" width="1732" height="1283" loading="lazy" alt="Low-fidelity wireframe of the redesigned full view page">
+            </div>
+          </figure>
+          <p class="cs__p"><strong>Full View Wireframe</strong></p>
+        </section>
+
+        <!-- impact -->
+        <section class="cs__section" id="impact">
+          <div class="callout callout--red callout--tint">          <p class="cs__eyebrow">impact</p>
+            <p class="cs__p">The UX &amp; D team is moving forward with the search redesign as part of their next large-scale initiative.</p>
+            <ul class="cs__list">
+              <li><strong>Identified what works and what breaks in full-text search</strong><br>The redesign can now be built to support understandable labels, trustworthy results, and to support the key tasks that broke before, such as copy-paste, citations, and rights and access.</li>
+              <li><strong>Shaped the roadmap for the full-text search redesign</strong><br>The study replaced internal assumptions about full text search user experiences with an evidence-based feature set.</li>
+              <li><strong>Delivered lo-fi wireframes as a starting point for the redesign</strong><br>The team has wireframes and recommendations to build the real experience on top of.</li>
+            </ul>
+        
+          </div>
+        </section>
+
+        <!-- learnings -->
+        <section class="cs__section" id="learnings">
+          <p class="cs__eyebrow">learnings</p>
+          <p class="cs__p"><strong>Chase the "why" behind off-topic user feedback</strong><br>Sorting and relevance controls weren't a research goal, but participants kept bringing them up. I didn't understand why at first, so I coded them anyway and included them in my draft findings because so many people mentioned them. In review, our Sr. UX Research Lead cut them for being out of scope, which was a fair call.</p>
+          <p class="cs__p">After the Sr. UX Research Lead made the edits, I looked closer at the transcripts and realized the pattern: people weren't asking for a nice-to-have button, they wanted to understand what a results page was showing so they could judge relevance quickly, the same thing they did with match counts, snippets, and titles. I brought that back to them, and it became part of Recommendation 02.</p>
+          <p class="cs__p"><strong>Watch what people do and not just what they say</strong><br>Some users would state during the usability testing session that they understood full text search, but then, when answering follow up questions or completing tasks, they would show confusion about what full text search was. Learning to weigh observed behavior over stated comprehension, and to probe those contradictions during the session, changed how I read and coded the sessions.</p>
+          <p class="cs__p"><strong>Start in low fidelity to protect the thinking</strong><br>With AI tools that make polished UI easy, I kept wanting to make my designs look finished. But polish pulls feedback toward colors and spacing, and I needed the team debating whether a feature should exist at all. Staying in low fidelity kept the conversation on structure.</p>
+        </section>
+
+        <!-- contribution -->
+        <section class="cs__section" id="contribution">
+          <p class="cs__eyebrow">contribution</p>
+          <ul class="cs__list">
+            <li>Led the user research: planning, script writing, recruitment, moderation sessions (5 out of 11), analysis, and deliverables.</li>
+            <li>Wrote the first draft of the usability script and the final report; incorporated team feedback to shape the final versions.</li>
+            <li>Created the lo-fi designs and annotations, iterated based on team feedback.</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- ===== More work ===== -->
+    <section class="more">
+      <p class="work__label">more work</p>
+      <div class="work__grid">
+
+        <a class="card" href="case-study-trust.html">
+          <div class="card__image">
+            <img src="images/title-trust.png" width="2160" height="864" loading="lazy" alt="A chat box reading “Can I trust this?” placed over the Harvard wordmark">
+            <div class="card__pills"><span class="pill">Harvard Library</span></div>
+          </div>
+          <h2 class="card__title">Understanding Generative AI Chatbots and User Trust</h2>
+          <p class="card__tags">contextual inquiry · affinity diagramming</p>
+        </a>
+
+        <a class="card" href="case-study-robot.html">
+          <div class="card__image">
+            <img src="robot-music-collaboration.png" width="1080" height="1080" loading="lazy" alt="Black and white hands, one holding a conductor’s baton, over a grid with motion-capture lines">
+            <div class="card__pills"><span class="pill">University of Michigan: Performing Arts Technology</span></div>
+          </div>
+          <h2 class="card__title">Exploring Robot-Mediated Remote Music Collaboration</h2>
+          <p class="card__tags">mixed methods research · survey design · motion capture</p>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copy">© October 2026</p>
+    <nav class="footer__links">
+      <a href="mailto:kortega@umich.edu">email</a>
+      <a href="https://www.linkedin.com/in/ortegakelly" target="_blank" rel="noopener">linkedin</a>
+    </nav>
+  </footer>
+
+  <script>
+    /* Sticky nav: highlight the section currently in view */
+    (function () {
+      var toc = document.querySelector('.toc');
+      if (!toc) return;
+      var links = Array.prototype.slice.call(toc.querySelectorAll('.toc__list a[href^="#"]'));
+      var items = links.map(function (a) {
+        return { link: a, section: document.getElementById(a.getAttribute('href').slice(1)) };
+      }).filter(function (i) { return i.section; });
+      var mobile = window.matchMedia('(max-width: 800px)');
+      var current = null, ticking = false;
+
+      function setActive(item) {
+        if (item === current) return;
+        current = item;
+        links.forEach(function (a) { a.removeAttribute('aria-current'); });
+        if (!item) return;
+        item.link.setAttribute('aria-current', 'true');
+        /* On phones the nav is a sideways strip: keep the active item in view */
+        if (mobile.matches) {
+          var left = item.link.offsetLeft - (toc.clientWidth - item.link.offsetWidth) / 2;
+          toc.scrollTo({ left: left, behavior: 'smooth' });
+        }
+      }
+
+      function update() {
+        ticking = false;
+        var line = window.innerHeight * 0.35;
+        var active = null;
+        items.forEach(function (i) {
+          if (i.section.getBoundingClientRect().top <= line) active = i;
+        });
+        setActive(active);
+      }
+
+      function onScroll() {
+        if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      update();
+    })();
+  </script>
+
+</body>
+</html>

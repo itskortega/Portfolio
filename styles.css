@@ -1,0 +1,849 @@
+:root {
+  --bg: #f7f7f9;
+  --text: #3a3a3c;
+  --text-soft: #6b6b70;
+  --text-faint: #a3a3a8;
+  --line: #e8e8ec;
+  --placeholder: #eeeeec;
+  --footer-bg: #eceef6;
+  --gutter: 56px;
+  --serif: "Lora", Georgia, serif;
+  --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main { flex: 1; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ---------- Nav ---------- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 var(--gutter);
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  color: var(--text-faint);
+}
+
+.nav__links { display: flex; gap: 32px; }
+
+.nav a { transition: color 0.2s ease; }
+.nav a:hover { color: var(--text); }
+
+/* ---------- Hero ---------- */
+.hero { padding: 76px var(--gutter) 0; }
+
+.hero__name {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(56px, 9vw, 92px);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+
+.hero__tagline {
+  margin: 14px 0 0;
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 400;
+  color: var(--text);
+}
+
+.hero__role {
+  margin: 14px 0 0;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: var(--text-soft);
+}
+
+/* ---------- Featured work ---------- */
+.work { padding: 88px var(--gutter) 96px; }
+
+.work__label {
+  margin: 0 0 16px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--text-faint);
+}
+
+.work__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 30px;
+  row-gap: 72px;
+  align-items: start;
+}
+
+.card { display: block; }
+
+.card { outline: none; }
+
+.card__image {
+  position: relative;
+  aspect-ratio: 570 / 493;
+  background: var(--placeholder);
+  border-radius: 0 0 16px 0;
+  overflow: hidden;
+  /* Hover frame: transparent until hovered, then a thin dashed blue line sits just outside the image */
+  outline: 1px dashed transparent;
+  outline-offset: 7px;
+  transition: border-radius 0.3s ease, outline-color 0.3s ease;
+}
+
+.card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card:hover .card__image,
+.card:focus-visible .card__image {
+  border-radius: 18px;
+  outline-color: #4f86d6;
+}
+
+/* Pill that slides up over the bottom-left of the image on hover */
+.card__pills {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.pill {
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: var(--bg);
+  color: var(--text-soft);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.card:hover .card__pills,
+.card:focus-visible .card__pills {
+  opacity: 1;
+  transform: none;
+}
+
+/* Phones and tablets have no hover, so show the pills all the time */
+@media (hover: none) {
+  .card__pills { opacity: 1; transform: none; }
+}
+
+.card__title {
+  margin: 20px 0 0;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.card__tags {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--text-faint);
+}
+
+.card__desc {
+  margin: 12px 0 0;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-soft);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 76px;
+  padding: 0 var(--gutter);
+  background: var(--footer-bg);
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.footer__copy { margin: 0; }
+.footer__links { display: flex; gap: 28px; }
+.footer a { transition: color 0.2s ease; }
+.footer a:hover { color: var(--text); }
+
+/* ---------- About page ---------- */
+.nav a[aria-current="page"] { color: var(--text); }
+
+.about {
+  --about-text: 17px;   /* body copy */
+  --about-gap: 132px;                          /* space above and below the contact box */
+  padding: 67px var(--gutter) 120px;
+}
+
+/* Small section labels: "about", "me, as a researcher", "me, as a human" */
+.about__label {
+  margin: 0 0 18px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: #4f86d6;   /* same blue as the hover frames on the photos */
+}
+
+/* Body copy */
+.about__p {
+  margin: 0;
+  font-size: var(--about-text);
+  line-height: 1.57;
+  color: var(--text);
+}
+
+.about strong { font-weight: 700; }
+
+/* Intro + portrait */
+.about__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(300px, 30.9vw, 395px);
+  column-gap: 72px;
+  align-items: stretch;   /* photo stretches to the height of the text column */
+}
+
+.about__intro .about__p + .about__p { margin-top: 28px; }
+
+.about__portrait {
+  position: relative;
+  margin: 10px 0 8px;   /* top lines up with the first line of text; bottom sits on the baseline of the last line */
+  background: #d6e4f0;
+  border-radius: 0 0 16px 0;
+  overflow: hidden;
+}
+
+.about__portrait img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 40%;
+}
+
+/* me, as a researcher */
+.about__researcher { margin-top: calc(var(--about-gap) + 1px); }   /* same visible space as above "me, as a human" */
+.about__lead { max-width: 600px; }
+
+.about__traits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 56px;
+  margin-top: 52px;
+}
+
+.trait__title {
+  margin: 0 0 18px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+/* Dashed contact box: 11px dashes, 9px gaps, 1px line */
+.cta {
+  --dash: #7aaabf;
+  margin-top: var(--about-gap);
+  padding: 54px 40px 58px;
+  text-align: center;
+  background:
+    linear-gradient(90deg, var(--dash) 55%, transparent 0) top    / 20px 1px repeat-x,
+    linear-gradient(90deg, var(--dash) 55%, transparent 0) bottom / 20px 1px repeat-x,
+    linear-gradient(0deg,  var(--dash) 55%, transparent 0) left   / 1px 20px repeat-y,
+    linear-gradient(0deg,  var(--dash) 55%, transparent 0) right  / 1px 20px repeat-y;
+}
+
+.cta__title {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(24px, 2.18vw, 28px);
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.cta__text {
+  margin: 36px 0 0;
+  font-size: var(--about-text);
+  font-weight: 400;
+  line-height: 1.57;
+  color: var(--text);
+}
+
+.cta__text a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s ease;
+}
+
+.cta__text a:hover { color: var(--text-soft); }
+
+/* me, as a human */
+.about__human { margin-top: calc(var(--about-gap) + 4px); }
+.about__human .about__p { max-width: 910px; }
+
+.about__gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 30px;
+  row-gap: 30px;
+  margin: 73px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Photo with a caption pill that slides up on hover (same behaviour as the home page cards) */
+.photo { position: relative; margin: 0; outline: none; }
+
+.photo__frame {
+  aspect-ratio: 1 / 1;
+  background: var(--placeholder);
+  border-radius: 0 0 16px 0;
+  overflow: hidden;
+  outline: 1px dashed transparent;
+  outline-offset: 7px;
+  transition: border-radius 0.3s ease, outline-color 0.3s ease;
+}
+
+.photo__frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo:hover .photo__frame,
+.photo:focus-visible .photo__frame {
+  border-radius: 18px;
+  outline-color: #4f86d6;
+}
+
+.photo__pill {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  max-width: calc(100% - 24px);
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: var(--bg);
+  color: var(--text-soft);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.photo:hover .photo__pill,
+.photo:focus-visible .photo__pill {
+  opacity: 1;
+  transform: none;
+}
+
+/* Touch screens have no hover, so the caption sits under the photo as plain text */
+@media (hover: none) {
+  .photo__pill {
+    position: static;
+    max-width: none;
+    margin-top: 10px;
+    padding: 0;
+    border-radius: 0;
+    background: none;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+}
+
+/* ---------- Responsive ---------- */
+/* Tablets and small laptops: stack the photo above the intro so it never gets squeezed into a tall, narrow crop */
+@media (max-width: 1100px) {
+  .about__top { grid-template-columns: 1fr; row-gap: 32px; }
+  .about__portrait { order: -1; margin: 0; aspect-ratio: 477 / 441; max-width: 477px; }
+}
+
+@media (max-width: 800px) {
+  :root { --gutter: 24px; }
+
+  .about { --about-gap: 80px; padding-top: 48px; padding-bottom: 80px; }
+  .about__top { grid-template-columns: 1fr; row-gap: 32px; }
+  .about__portrait { order: -1; margin: 0; aspect-ratio: 477 / 441; }
+  .about__intro { max-width: none; }
+  .about__intro .about__p + .about__p { margin-top: 28px; }
+  .about__researcher { margin-top: 48px; }
+  .about__traits { grid-template-columns: 1fr; row-gap: 32px; margin-top: 40px; }
+  .cta { padding: 40px 24px; }
+  .about__gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; row-gap: 28px; margin-top: 48px; }
+
+  /* Footer: let the links wrap under the copyright instead of crushing together */
+  .footer {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 76px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    row-gap: 12px;
+  }
+  .footer__copy { white-space: nowrap; }
+  .footer__links { flex-wrap: wrap; gap: 8px 20px; }
+
+  .hero { padding-top: 56px; }
+  .work { padding-top: 64px; }
+
+  .work__grid {
+    grid-template-columns: 1fr;
+    row-gap: 64px;
+  }
+
+  .card__desc { font-size: 17px; }
+}
+
+/* =====================================================================
+   Case study pages
+   Tokens: --nav-width, --measure, --gap, --red
+   ===================================================================== */
+
+html { scroll-padding-top: 96px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+.cs {
+  --nav-width: 200px;
+  --measure: 640px;
+  --gap: 72px;
+  --red: #A3051DB3;
+  --cs-text: 17px;
+}
+
+/* ---------- Title block ---------- */
+.cs__hero { padding: 40px var(--gutter) 0; }
+
+.cs__cover {
+  margin: 0;
+  aspect-ratio: 1080 / 432;
+  background: var(--placeholder);
+  border-radius: 0 0 16px 0;
+  overflow: hidden;
+}
+
+.cs__cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cs__title {
+  margin: 40px 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  max-width: 900px;
+}
+
+.cs__question {
+  margin: 12px 0 0;
+  max-width: 760px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.cs__meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 32px;
+  margin: 40px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--red);
+}
+
+.cs__meta dt {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--red);
+}
+
+.cs__meta dd {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.cs__meta .meta__item { min-width: 0; }
+
+/* ---------- Two-column layout ---------- */
+.cs__layout {
+  display: grid;
+  grid-template-columns: var(--nav-width) minmax(0, 1fr);
+  column-gap: 72px;
+  align-items: start;
+  padding: 96px var(--gutter) 120px;
+}
+
+/* ---------- Sticky side nav ---------- */
+.toc {
+  position: sticky;
+  top: 96px;
+  align-self: start;
+  font-size: 15px;
+}
+
+.toc__back {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: var(--text-faint);
+  transition: color 0.2s ease;
+}
+
+.toc__back:hover { color: var(--text); }
+
+.toc__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toc__list a {
+  display: block;
+  padding: 7px 0 7px 16px;
+  border-left: 1px solid var(--line);
+  line-height: 1.4;
+  color: var(--text-faint);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.toc__list a:hover { color: var(--text); }
+
+.toc__list a[aria-current="true"] {
+  color: var(--text);
+  border-left-color: var(--text);
+}
+
+/* ---------- Sections ---------- */
+.cs__content { min-width: 0; font-size: var(--cs-text); }
+
+.cs__section { scroll-margin-top: 96px; }
+.cs__section + .cs__section { margin-top: var(--gap); }
+
+/* Small red headers: context, goal, methods, insight 01, recommendation 01 ... */
+.cs__eyebrow,
+.block__label {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: var(--red);
+}
+
+.cs__eyebrow--next { margin-top: var(--gap); }
+
+.cs__p,
+.cs__list {
+  max-width: var(--measure);
+  font-size: var(--cs-text);
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.cs__p { margin: 0; }
+.cs__p + .cs__p { margin-top: 16px; }
+.cs__p strong,
+.cs__list strong { font-weight: 700; }
+
+.cs__list {
+  margin: 0;
+  padding-left: 1.3em;
+}
+
+.cs__list li { margin-top: 8px; padding-left: 4px; }
+.cs__list li:first-child { margin-top: 0; }
+.cs__list ul { margin: 8px 0 0; padding-left: 1.3em; }
+
+/* A paragraph or list that follows another block */
+.cs__p + .cs__list,
+.cs__list + .cs__p,
+.cs__list + .cs__list { margin-top: 16px; }
+
+/* ---------- Insight and recommendation blocks ---------- */
+.block {
+  margin-top: var(--gap);
+  padding-top: 24px;
+  border-top: 1px solid var(--red);
+}
+
+.cs__p + .block { margin-top: var(--gap); }
+
+/* The only large text on the page: each insight and each recommendation */
+.block__title {
+  margin: 0 0 20px;
+  max-width: 720px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.block > .cs__p,
+.block > .cs__list { margin-top: 0; }
+.block > .cs__list + .cs__p,
+.block > .cs__p + .cs__list,
+.block > .cs__list + .cs__list,
+.block > .cs__p + .cs__p { margin-top: 16px; }
+
+.quote {
+  max-width: var(--measure);
+  margin: 24px 0 0;
+  padding-left: 20px;
+  border-left: 1px solid var(--text-faint);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.quote p { margin: 0; }
+
+/* ---------- Callout (same dashed box as "Let's work together") ---------- */
+.callout {
+  --dash: #7aaabf;
+  max-width: 760px;
+  padding: 40px 40px 44px;
+  background:
+    linear-gradient(90deg, var(--dash) 55%, transparent 0) top    / 20px 1px repeat-x,
+    linear-gradient(90deg, var(--dash) 55%, transparent 0) bottom / 20px 1px repeat-x,
+    linear-gradient(0deg,  var(--dash) 55%, transparent 0) left   / 1px 20px repeat-y,
+    linear-gradient(0deg,  var(--dash) 55%, transparent 0) right  / 1px 20px repeat-y;
+}
+
+.callout .cs__p { max-width: none; }
+
+/* ---------- Figures ---------- */
+.fig { margin: 32px 0 0; }
+
+.fig__frame {
+  background: var(--placeholder);
+  border-radius: 0 0 16px 0;
+  overflow: hidden;
+}
+
+.fig__frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- More work ---------- */
+.more { padding: 0 var(--gutter) 96px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .cs { --nav-width: 160px; }
+  .cs__layout { column-gap: 40px; }
+}
+
+@media (max-width: 800px) {
+  .cs { --gap: 48px; }
+
+  html { scroll-padding-top: 72px; }
+  .cs__section { scroll-margin-top: 72px; }
+
+  .cs__hero { padding-top: 24px; }
+  .cs__title { margin-top: 28px; }
+  .cs__meta { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 24px; margin-top: 32px; }
+
+  .cs__layout {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: 0;
+    padding-bottom: 80px;
+  }
+
+  /* Nav turns into a strip pinned to the top of the screen */
+  .toc {
+    top: 0;
+    z-index: 5;
+    margin: 0 calc(var(--gutter) * -1) 48px;
+    padding: 0 var(--gutter);
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .toc::-webkit-scrollbar { display: none; }
+
+  .toc__back { display: none; }
+
+  .toc__list { display: flex; gap: 24px; white-space: nowrap; }
+
+  .toc__list a {
+    padding: 16px 0 14px;
+    border-left: 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  .toc__list a[aria-current="true"] { border-bottom-color: var(--text); }
+
+  .callout { padding: 28px 22px 32px; }
+  .more { padding-bottom: 72px; }
+}
+
+.block--first { margin-top: 0; }
+.cs__eyebrow + .block { margin-top: 0; }
+
+/* Red line closing the insights, same rule as above each insight */
+.cs__section--ruled {
+  padding-top: 24px;
+  border-top: 1px solid var(--red);
+}
+
+/* Bold headings that follow the last insight/recommendation block */
+.cs__p--after-block { margin-top: var(--gap); }
+
+/* Two images side by side in one figure */
+.fig--pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
+@media (max-width: 800px) { .fig--pair { grid-template-columns: minmax(0, 1fr); } }
+
+/* Smaller figures */
+.fig--xs { max-width: 360px; }
+.fig--sm { max-width: 480px; }
+.fig--md { max-width: 560px; }
+
+/* Figure after a caption line, caption after a figure */
+.fig + .cs__p { margin-top: 16px; }
+
+/* Text beside a small figure */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) 300px; column-gap: 48px; align-items: start; }
+.split__text { min-width: 0; }
+.split .fig { margin-top: 0; }
+@media (max-width: 800px) {
+  .split { grid-template-columns: minmax(0, 1fr); row-gap: 32px; }
+  .split .fig { max-width: 360px; }
+}
+
+/* Dashed box in the page's red (decision) */
+.callout--red { --dash: var(--red); }
+
+/* Captions and spacing for the end wireframes */
+.block + .fig { margin-top: var(--gap); }
+.fig--spaced { margin-top: var(--gap); }
+
+/* Highlighted definition (context) */
+.cs { --tint: #A3051D0A; --highlight: #FFDD55; }
+.statement__text {
+  max-width: 560px;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--text);
+}
+.statement__text mark {
+  padding: 2px 4px;
+  background: var(--highlight);
+  color: inherit;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+@media (max-width: 800px) { .statement { padding: 28px 24px; margin: 32px 0; } }
+
+/* Bold question line */
+.cs__p--lead { font-size: 20px; font-weight: 700; }
+
+/* Light red fill inside the red dashed box */
+.callout--tint { background-color: var(--tint); }
+
+/* One shared box style: light red fill, red dashed border, full content width */
+.callout.callout--red { max-width: none; padding: 32px 48px; }
+.callout--center { margin: 48px 0; text-align: center; }
+.callout--center .statement__text { max-width: 560px; margin: 0 auto; }
+.fig--xs, .fig--sm, .fig--md { max-width: none; }
+@media (max-width: 800px) {
+  .callout.callout--red { padding: 24px 22px; }
+  .callout--center { margin: 32px 0; }
+}
+
+.callout .cs__list { max-width: var(--measure); }
+
+/* A recommendation sits right under its insight, with no red line between them */
+.block.block--pair { border-top: 0; padding-top: 0; margin-top: 40px; }
+
+/* Label sits 14px above a centered statement box (spec: label to content = 14px) */
+.callout--center.callout--after-label { margin-top: 0; }
+
+/* Robot page red boxes: less padding, wider statement text, still centered */
+@media (min-width: 801px) {
+  .callout.callout--red.callout--wide { padding: 28px 32px; }
+}
+.callout--wide .statement__text { max-width: 720px; }
+
+/* ---------- Max page width: on very wide screens, keep the page centered ---------- */
+/* Header and footer stay full width. 1280px includes the 56px side margins. */
+.hero,
+.work,
+.about,
+.cs__hero,
+.cs__layout,
+.more {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Nav and footer: keep their bars full width, but line the content up with the centered page column */
+.nav,
+.footer {
+  padding-left: max(var(--gutter), calc((100% - 1280px) / 2 + var(--gutter)));
+  padding-right: max(var(--gutter), calc((100% - 1280px) / 2 + var(--gutter)));
+}

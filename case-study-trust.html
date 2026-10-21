@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Understanding Generative AI Chatbots and User Trust · Kelly Ortega</title>
+  <meta name="description" content="How do researchers decide whether to trust a chatbot’s output when doing academic research?">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a href="index.html" class="nav__home">home</a>
+    <nav class="nav__links">
+      <a href="index.html#work">work</a>
+      <a href="about.html">about</a>
+    </nav>
+  </header>
+
+  <main class="cs">
+
+    <!-- ===== Title block ===== -->
+    <section class="cs__hero">
+      <figure class="cs__cover">
+        <img src="images/title-trust.png" width="2160" height="864" alt="A chat box reading “Can I trust this?” placed over the Harvard wordmark">
+      </figure>
+
+      <h1 class="cs__title">Understanding Generative AI Chatbots and User Trust</h1>
+      <p class="cs__question">How do researchers decide whether to trust a chatbot’s output when doing academic research?</p>
+
+      <dl class="cs__meta">
+        <div class="meta__item">
+          <dt>team</dt>
+          <dd>UX Research Intern<br>Library Intern<br>Sr. UX Researcher</dd>
+        </div>
+        <div class="meta__item">
+          <dt>my role</dt>
+          <dd>UX Research Intern</dd>
+        </div>
+        <div class="meta__item">
+          <dt>tools</dt>
+          <dd>Dovetail<br>Figma</dd>
+        </div>
+        <div class="meta__item">
+          <dt>duration</dt>
+          <dd>2 months</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ===== Sticky nav + content ===== -->
+    <div class="cs__layout">
+
+      <nav class="toc" aria-label="On this page">
+        <a class="toc__back" href="index.html#work">← back to work</a>
+        <ul class="toc__list">
+          <li><a href="#context">context</a></li>
+          <li><a href="#methods">methods</a></li>
+          <li><a href="#findings">findings</a></li>
+          <li><a href="#assumption">assumption challenged</a></li>
+          <li><a href="#recommendations">recommendations</a></li>
+          <li><a href="#learnings">learnings</a></li>
+          <li><a href="#impact">impact</a></li>
+          <li><a href="#contribution">my contribution</a></li>
+        </ul>
+      </nav>
+
+      <div class="cs__content">
+
+        <!-- quick summary -->
+        <section class="cs__section" id="summary">
+          <div class="callout callout--red callout--tint callout--wide">
+            <p class="cs__eyebrow">quick summary</p>
+            <p class="cs__p">Harvard Library is building its own AI chatbot for research, but it had not studied how researchers decide whether to trust a chatbot’s output. Our team ran 11 moderated contextual inquiry sessions with experienced academic researchers, then analyzed them into six insights and four recommendations. I helped shape the session guide, moderated 4 of the sessions, contributed to the analysis, and wrote the final report.</p>
+            <p class="cs__p">The findings answered key research questions and provided design direction for the chatbot: inline citations with passage previews, easy access to original sources, a plain-language explainer on how the chatbot works, and a default voice that flags uncertainty.</p>
+          </div>
+        </section>
+
+        <!-- context -->
+        <section class="cs__section" id="context">
+          <p class="cs__eyebrow">context</p>
+          <p class="cs__p">Generative AI chatbots are becoming a common tool in academic research, but every response from an AI chatbot raises the question: can the output be trusted or not?</p>
+          <p class="cs__p">The decision to trust or not trust the output ends up shaping citations, argument, and conclusions in actual academic work. As Harvard Library moves toward building its own AI chatbot for research tasks and expands its broader research agenda around AI and users, understanding what drives trust or distrust is important.</p>
+
+          <p class="cs__eyebrow cs__eyebrow--next">goal</p>
+          <p class="cs__p">This was an exploratory study. Harvard Library had not previously researched how users evaluate trust in GenAI chatbot output, so <strong>the goal was to use the findings of the study to inform the design of Harvard Library’s new chatbot and the direction of their future research.</strong></p>
+
+          <p class="cs__eyebrow cs__eyebrow--next">key research questions</p>
+          <ul class="cs__list">
+            <li>How do researchers who use GenAI chatbots decide whether to trust a chatbot output when doing academic research?</li>
+            <li>How much does personal judgment, experience, and prior knowledge of the topic influence trust?</li>
+            <li>What aspects of the chatbot system and output shift belief up or down?</li>
+            <li>When a user doubts the response, what do they do next?</li>
+            <li>Does the task itself, its stakes, subject familiarity, or how long the conversation runs, change that threshold?</li>
+          </ul>
+        </section>
+
+        <!-- methods -->
+        <section class="cs__section" id="methods">
+          <p class="cs__eyebrow">research methods: contextual inquiry</p>
+          <p class="cs__p">Our team ran 11 moderated contextual inquiry sessions with academic researchers who were experienced AI chatbot users (1+ years of experience using Gen AI chatbots). Each participant completed a series of realistic research tasks using their preferred chatbot, covering:</p>
+          <ul class="cs__list">
+            <li>Low-stakes research</li>
+            <li>High-stakes research</li>
+            <li>Contested topics</li>
+            <li>A recent, real use case from their own research</li>
+          </ul>
+          <p class="cs__p">After completing the tasks, participants answered a couple more questions about trust and their experience with AI chatbots.</p>
+
+          <p class="cs__eyebrow cs__eyebrow--next">research analysis: affinity diagramming</p>
+          <p class="cs__p">Following the contextual inquiry sessions, our team used Dovetail to code the transcripts by tagging data into buckets: positive, negative, behaviors, expectation, confusion, and observation. Then, we analyzed the tagged data and observations through affinity diagramming to identify major key findings.</p>
+
+          <figure class="fig">
+            <div class="fig__frame">
+              <img src="images/affinity-diagram.png" width="1740" height="568" loading="lazy" alt="Affinity diagram with clusters of colored sticky notes grouped under themes such as Mental Model, Output Format, and Model transparency">
+            </div>
+          </figure>
+        </section>
+
+        <!-- findings -->
+        <section class="cs__section" id="findings">
+          <p class="cs__eyebrow">findings</p>
+
+          <article class="block">
+            <p class="block__label">insight 01</p>
+            <h3 class="block__title">Researchers have different mental models of how an AI chatbot works, especially how it finds and selects scholarly sources.</h3>
+            <ul class="cs__list">
+              <li>Participants described specific, confident, and sometimes contradictory beliefs about how AI works.</li>
+              <li>Specifically on sources, participants stated a variety of beliefs: AI scrapes articles from Google, is weak on older papers, pulls from Reddit and social media if guardrails aren’t in place, only consults top journals, etc.</li>
+              <li>These beliefs shaped how much they trusted the output and at times influenced how they prompted the chatbot.</li>
+            </ul>
+            <blockquote class="quote">
+              <p>“A PhD student could give me better sources than AI... it would only really find papers from the last 10 to 15 years... it also just neglects older, really equally needed literature or just chooses the most popular ones.”</p>
+            </blockquote>
+          </article>
+
+          <article class="block">
+            <p class="block__label">insight 02</p>
+            <h3 class="block__title">Researchers didn’t trust chatbot output by default, so they worked to establish trust themselves.</h3>
+            <ul class="cs__list">
+              <li><strong>Check after:</strong> for most tasks, participants verified the output, usually by checking claims against the cited source.</li>
+              <li><strong>Control before:</strong> some participants also built sophisticated, creative guardrails into their prompts to push the chatbot toward trustworthy output before it answered.</li>
+            </ul>
+            <p class="cs__p">Either way, participants placed trust in their own process instead of the system. They trusted their ability to control the output and/or their ability to catch what’s wrong. Low-stakes tasks were the exception (see insight 04).</p>
+          </article>
+
+          <article class="block">
+            <p class="block__label">insight 03</p>
+            <h3 class="block__title">A clickable citation was the strongest trust cue. But, it can only prove a source exists. It doesn’t prove the claim made is true.</h3>
+            <ul class="cs__list">
+              <li>Citations are important for trust but they’re not enough. Most participants said seeing a citation wasn’t enough on its own because they still needed to click through and check the source.</li>
+              <li>No citation was treated as a full stop.</li>
+              <li>The failure participants described most wasn’t a fabricated citation. Participants said those are rare now.
+                <ul>
+                  <li>Currently, the most common failure was a real citation misrepresented, where the source exists but doesn’t accurately say what the chatbot claims. This is harder to catch than a fake citation, since it requires reading the source and comparing it word for word.</li>
+                </ul>
+              </li>
+            </ul>
+          </article>
+
+          <article class="block">
+            <p class="block__label">insight 04</p>
+            <h3 class="block__title">As the stakes of a task increase, researchers leave the chatbot and go straight to the source.</h3>
+            <ul class="cs__list">
+              <li>Across sessions, participants were more likely to trust (and not verify) during a low-stakes task (e.g. find an article) but refused to trust it at all for a high-stakes task (e.g. find application information for a critical internship opportunity).</li>
+              <li>This tracks established trust theory (Mayer et al.; Lee &amp; See): trust only becomes relevant where there’s real uncertainty and vulnerability. If there’s no risk then there’s nothing to trust.</li>
+            </ul>
+          </article>
+
+          <article class="block">
+            <p class="block__label">insight 05</p>
+            <h3 class="block__title">Researchers’ own expertise is a key check on the chatbot’s output, and it only works for familiar topics.</h3>
+            <ul class="cs__list">
+              <li>In their own research area, participants could spot weak output by checking it against what they already knew and discard it without needing outside sources.</li>
+              <li>The trust-testing behavior in insight 02 only worked with expertise. The participant who asked the chatbot questions she already knew the answer to said she could only do this in her specific research domain.</li>
+              <li>Participants were aware of their verification limits for unfamiliar subjects. They said things like, “maybe I don’t have a lot of prior knowledge on this, maybe I’m not actually going to be able to fully judge this.”</li>
+              <li>Expertise catches more than hallucinations. It lets researchers catch problems with framing and whether the response was useful for their thinking, or whether it answers the question they’re actually trying to ask.</li>
+            </ul>
+            <p class="cs__p"><strong>What this means for design:</strong> this is further evidence for recommendations 01 and 02. Researchers without expertise can only check the output against the source, so passage previews and easy routing matter most for subject-area novices.</p>
+          </article>
+
+          <article class="block">
+            <p class="block__label">insight 06</p>
+            <h3 class="block__title">Confidence in the chatbot’s tone reads as a red flag, but honesty about limitations increases trust.</h3>
+            <ul class="cs__list">
+              <li>When the chatbot expressed uncertainty or stated caveats, trust went up.</li>
+              <li>A polished, confident tone triggered skepticism. Participants read it as one-sided.</li>
+              <li>This runs counter to the default in most product design, which optimizes for confident, polished output.</li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- assumption challenged -->
+        <section class="cs__section cs__section--ruled" id="assumption">
+          <p class="cs__eyebrow">my assumption challenged</p>
+          <div class="callout">
+            <p class="cs__p">I went in assuming that if a chatbot cites real sources, then users will trust it, but the sessions showed me that a clickable citation proves the paper exists and nothing more, so when it mattered, researchers clicked through and checked.</p>
+            <p class="cs__p">That changed how I framed the recommendations. The question stopped being “how do we make the chatbot more trustworthy?” and became “how do we support the checking researchers already do by hand?” It also changed what a good outcome looks like. Sometimes a good outcome is a researcher leaving the chat to read the primary source.</p>
+          </div>
+        </section>
+
+        <!-- recommendations -->
+        <section class="cs__section" id="recommendations">
+          <article class="block block--first">
+            <p class="block__label">recommendation 01 — based on insights 03 and 05</p>
+            <h3 class="block__title">Add inline clickable citations with a preview of the passage it references.</h3>
+            <ul class="cs__list">
+              <li>Cite inline with the actual passage a claim is drawn from because this is the gap participants are already closing manually by clicking through.</li>
+              <li>Hyperlink every citation without exception. Unlinked citations were named explicitly as a blocker to verification.</li>
+              <li>Especially important in unfamiliar topics, where researchers can’t check claims against what they already know (insight 05).</li>
+              <li><strong>Start here:</strong> it addresses the check participants were already doing by hand, so it is the first thing I would build.</li>
+            </ul>
+
+            <figure class="fig">
+              <div class="fig__frame">
+                <img src="images/citation-illustration.png" width="3000" height="1920" loading="lazy" alt="Low-fidelity concept of a chatbot answer with a numbered inline citation, a passage preview with the matching words highlighted, and an Open full source button">
+              </div>
+            </figure>
+          </article>
+
+          <article class="block">
+            <p class="block__label">recommendation 02 — based on insights 04 and 05</p>
+            <h3 class="block__title">Make it easy to get to the original source, especially for potentially high-stakes queries.</h3>
+            <ul class="cs__list">
+              <li>Make the path fast and prominent rather than trying to hold the researcher inside the chat. A researcher leaving to verify against the primary source is the tool doing its job.</li>
+              <li>Consider adjusting chatbot behavior when a query looks high-stakes, with more citations and faster routing to primary sources.</li>
+              <li>High stakes aren’t the only trigger. Unfamiliarity also makes checking the primary source more necessary (insight 05).</li>
+            </ul>
+          </article>
+
+          <article class="block">
+            <p class="block__label">recommendation 03 — based on insights 01 and 02</p>
+            <h3 class="block__title">Improve transparency by explaining how the chatbot works and how sources are chosen.</h3>
+            <p class="cs__p"><strong>Why this is a transparency problem:</strong></p>
+            <ol class="cs__list">
+              <li>Participants didn’t know how the chatbot worked, which is why their mental models differed and often contradicted each other (insight 01).</li>
+              <li>They also didn’t trust it by default (insight 02).</li>
+              <li>So the work of making it trustworthy fell to them, through their own guardrails and checks (insight 02).</li>
+              <li>Improving transparency takes some of that burden off them.</li>
+            </ol>
+            <p class="cs__p"><strong>What to do about it:</strong></p>
+            <ul class="cs__list">
+              <li>Draft a short, plain-language explainer on how the system actually finds and selects sources, written with the team building it so it is accurate for Harvard’s own system.</li>
+              <li>Address the beliefs participants raised most often, such as recency, source type, and journal prioritization, confirming the ones that are true and correcting the ones that aren’t.</li>
+              <li>Treat this as a hypothesis to test: does the explainer change how people prompt or how much they trust the output, and do they read it at all? The answer would also shape the Library’s future research on trust.</li>
+              <li>One place we saw transparency land: 7 of the 9 participants who used Claude brought up its live search unprompted, because it let them see what the chatbot was searching for and reading. A live view of the search process is one version of this to prototype and test. Most participants used the same tool, so we can’t say it would work elsewhere.</li>
+            </ul>
+          </article>
+
+          <article class="block">
+            <p class="block__label">recommendation 04 — based on insight 06</p>
+            <h3 class="block__title">Build the default voice to hedge and flag uncertainty.</h3>
+            <ul class="cs__list">
+              <li>Present contested evidence explicitly (“sources disagree on this point”) instead of smoothing it into one confident-sounding answer.</li>
+              <li>We also can’t overdo it. Too much stops acting as a signal and can be evasive. Targeted honesty about its limitations is what matters most.</li>
+            </ul>
+            <p class="cs__p">Open question for future research: how novices build enough domain knowledge to evaluate output.</p>
+          </article>
+        </section>
+
+        <!-- learnings -->
+        <section class="cs__section" id="learnings">
+          <p class="cs__eyebrow">learnings</p>
+          <p class="cs__p"><strong>Move from observation to explanation</strong><br>My first draft of a finding was often a list of what participants did. The stronger insights explained why. I learned to look for that underlying explanation and treat it as a hypothesis to check against the data.</p>
+          <p class="cs__p"><strong>Follow what participants do</strong><br>For contextual inquiries, I learned to treat the session guide as a starting point. When a participant did something unexpected, following up revealed more than the planned questions would have. I learned to balance those detours against the tasks I still needed to cover.</p>
+          <p class="cs__p"><strong>Prioritize your research questions</strong><br>We had so many questions we wanted to ask, but it became clear during our pilot study that we needed to cut out quite a bit. Prioritize your research questions; keep additional questions if there’s time.</p>
+        </section>
+
+        <!-- impact -->
+        <section class="cs__section" id="impact">
+          <p class="cs__eyebrow">impact</p>
+          <p class="cs__p">Produced evidence on how researchers trust AI chatbot output and set design and research direction for Harvard Library’s research chatbot.</p>
+          <ul class="cs__list">
+            <li>Answered the team’s key research questions on how researchers judge, verify, and act on GenAI output in academic research.</li>
+            <li>Provided design direction for Harvard Library’s chatbot: inline citations with passage previews, easy access to original sources, a plain-language explainer on how the chatbot works, and a default voice that flags uncertainty.</li>
+            <li>Surfaced findings that run counter to common product defaults, such as confident, polished answers reading as a red flag and citations proving a source exists but not that it supports the claim.</li>
+          </ul>
+        </section>
+
+        <!-- contribution -->
+        <section class="cs__section" id="contribution">
+          <p class="cs__eyebrow">contribution</p>
+          <ul class="cs__list">
+            <li>Shaped the study design by providing feedback on the contextual inquiry session guide to the UX Research lead and helped narrow the research questions after the pilot.</li>
+            <li>Moderated 4 of the 11 contextual inquiry sessions with academic researchers.</li>
+            <li>Helped turn data into findings. I coded transcripts in Dovetail and took part in the affinity diagramming session that produced the six insights.</li>
+            <li>Wrote the final report, including the four prioritized recommendations for Harvard Library’s chatbot.</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- ===== More work ===== -->
+    <section class="more">
+      <p class="work__label">more work</p>
+      <div class="work__grid">
+
+        <a class="card" href="case-study-search.html">
+          <div class="card__image">
+            <img src="harvard-library-search.gif" width="450" height="450" loading="lazy" alt="Animated view of a digitized newspaper page in the Library of Congress image viewer">
+            <div class="card__pills"><span class="pill">Harvard Library</span></div>
+          </div>
+          <h2 class="card__title">Re-imagining Harvard Library’s Search Experience</h2>
+          <p class="card__tags">usability testing · comparative evaluation · lo-fi prototyping</p>
+        </a>
+
+        <a class="card" href="case-study-robot.html">
+          <div class="card__image">
+            <img src="robot-music-collaboration.png" width="1080" height="1080" loading="lazy" alt="Black and white hands, one holding a conductor’s baton, over a grid with motion-capture lines">
+            <div class="card__pills"><span class="pill">University of Michigan: Performing Arts Technology</span></div>
+          </div>
+          <h2 class="card__title">Exploring Robot-Mediated Remote Music Collaboration</h2>
+          <p class="card__tags">mixed methods research · survey design · motion capture</p>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copy">© October 2026</p>
+    <nav class="footer__links">
+      <a href="mailto:kortega@umich.edu">email</a>
+      <a href="https://www.linkedin.com/in/ortegakelly" target="_blank" rel="noopener">linkedin</a>
+    </nav>
+  </footer>
+
+  <script>
+    /* Sticky nav: highlight the section currently in view */
+    (function () {
+      var toc = document.querySelector('.toc');
+      if (!toc) return;
+      var links = Array.prototype.slice.call(toc.querySelectorAll('.toc__list a[href^="#"]'));
+      var items = links.map(function (a) {
+        return { link: a, section: document.getElementById(a.getAttribute('href').slice(1)) };
+      }).filter(function (i) { return i.section; });
+      var mobile = window.matchMedia('(max-width: 800px)');
+      var current = null, ticking = false;
+
+      function setActive(item) {
+        if (item === current) return;
+        current = item;
+        links.forEach(function (a) { a.removeAttribute('aria-current'); });
+        if (!item) return;
+        item.link.setAttribute('aria-current', 'true');
+        /* On phones the nav is a sideways strip: keep the active item in view */
+        if (mobile.matches) {
+          var left = item.link.offsetLeft - (toc.clientWidth - item.link.offsetWidth) / 2;
+          toc.scrollTo({ left: left, behavior: 'smooth' });
+        }
+      }
+
+      function update() {
+        ticking = false;
+        var line = window.innerHeight * 0.35;
+        var active = null;
+        items.forEach(function (i) {
+          if (i.section.getBoundingClientRect().top <= line) active = i;
+        });
+        setActive(active);
+      }
+
+      function onScroll() {
+        if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      update();
+    })();
+  </script>
+
+</body>
+</html>
