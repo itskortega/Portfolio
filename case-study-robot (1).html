@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exploring Robot-Mediated Remote Music Collaboration · Kelly Ortega</title>
+  <meta name="description" content="An experimental study testing whether a robot that mirrors body movements helps musicians perform remote duets.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a href="index.html" class="nav__home">home</a>
+    <nav class="nav__links">
+      <a href="index.html#work">work</a>
+      <a href="about.html">about</a>
+    </nav>
+  </header>
+
+  <main class="cs">
+
+    <!-- ===== Title block ===== -->
+    <section class="cs__hero">
+      <figure class="cs__cover">
+        <img src="robot-title.png" width="2880" height="1152" alt="Black and white hands, one clapping and one holding a conductor’s baton, over a grid with motion-capture lines">
+      </figure>
+
+      <h1 class="cs__title">Exploring Robot-Mediated Remote Music Collaboration</h1>
+      <p class="cs__question">An experimental study testing whether a robot that mirrors body movements helps musicians perform remote duets.</p>
+
+      <dl class="cs__meta">
+        <div class="meta__item">
+          <dt>team</dt>
+          <dd>Robotics Student<br>Engineering Student<br>PAT Student<br>Music Student<br>2 PAT Professors<br>1 Engineering Professor</dd>
+        </div>
+        <div class="meta__item">
+          <dt>my role</dt>
+          <dd>HCI Graduate Student Researcher</dd>
+        </div>
+        <div class="meta__item">
+          <dt>tools</dt>
+          <dd>Qualysis motion capture<br>Qualtrics</dd>
+        </div>
+        <div class="meta__item">
+          <dt>duration</dt>
+          <dd>1 year (ongoing)</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ===== Sticky nav + content ===== -->
+    <div class="cs__layout">
+
+      <nav class="toc" aria-label="On this page">
+        <a class="toc__back" href="index.html#work">← back to work</a>
+        <ul class="toc__list">
+          <li><a href="#status">in progress</a></li>
+          <li><a href="#context">context</a></li>
+          <li><a href="#build">shaped the build</a></li>
+          <li><a href="#researcher">only researcher</a></li>
+          <li><a href="#methods">methods</a></li>
+          <li><a href="#next">what’s next</a></li>
+          <li><a href="#contribution">contribution</a></li>
+        </ul>
+      </nav>
+
+      <div class="cs__content">
+
+        <!-- this study is in progress -->
+        <section class="cs__section" id="status">
+          <div class="callout callout--red callout--tint callout--wide">
+            <p class="cs__p"><strong>This study is in progress</strong></p>
+            <p class="cs__p"><em>Our pilot is planned for late October 2026, so there are no findings yet. This case study covers the question, how we built the robot and designed the study, and what I have learned working on the team so far. Everything about the study design is the current plan and may change.</em></p>
+          </div>
+
+        </section>
+
+        <!-- context -->
+        <section class="cs__section" id="context">
+          <p class="cs__eyebrow">context</p>
+          <p class="cs__p">More and more musicians perform together remotely, but remote duets have a problem. Sound travels with almost no delay but video doesn’t. Video lags, and there’s no good fix yet.</p>
+          <p class="cs__p">That matters because musicians don’t rely only on sound. Visual communication is how they share rhythm and timing, emotion, and a sense of connection, all of which make a performance good.</p>
+          <p class="cs__p">So if video can’t keep up, can a different kind of visual display give remote musicians what they need?</p>
+
+          <p class="cs__eyebrow cs__eyebrow--next">goal</p>
+          <div class="callout callout--red callout--tint callout--center callout--wide callout--after-label">
+            <p class="statement__text">Test whether a robot that mirrors a remote partner's movements helps musicians perform a duet together, compared with audio alone, live video, and an on-screen animation.</p>
+          </div>
+          <p class="cs__p">We are looking at specific key measures, including synchronization, presence, social connectedness, and overall performance.</p>
+
+          <p class="cs__eyebrow cs__eyebrow--next">hypothesis</p>
+          <p class="cs__p">Based on the research literature, we expect the robot to be the best display for supporting remote music collaboration. This is a hypothesis we have not tested yet.</p>
+
+          <p class="cs__eyebrow cs__eyebrow--next">key research questions</p>
+          <ul class="cs__list">
+            <li>Does a robot display help remote musicians play in time with each other?</li>
+            <li>Does it make them feel more present with, and connected to, their partner?</li>
+            <li>Does it improve how the performance feels and how well it goes?</li>
+            <li>How does it compare with three conditions: audio only, live video and with an on-screen animation?</li>
+          </ul>
+        </section>
+
+        <!-- how research shaped the build -->
+        <section class="cs__section" id="build">
+          <p class="cs__eyebrow">how research shaped the build</p>
+          <p class="cs__p">I joined the team to bring a research perspective. At first my work was project management and literature review. That review turned out to shape much of what came next: the study design, the survey, and the prototype of the robot's arms.</p>
+          <p class="cs__p">I built the arms with a performance arts technology student, then iterated with engineering and robotics students until the design worked and met our research goals.</p>
+          <p class="cs__p">One design decision where research mattered: the team wondered whether realistic, human-looking hands would work better for participants. The literature review I conducted showed an anthropomorphic design would not support our study goals.</p>
+        </section>
+
+        <!-- being the only researcher in the room -->
+        <section class="cs__section" id="researcher">
+          <p class="cs__eyebrow">being the only researcher in the room</p>
+          <p class="cs__p">I was the only researcher on a team of engineers, roboticists, and musicians, in fields I knew little about. Two things made that workable.</p>
+          <p class="cs__p"><strong>Asking questions.</strong> I took on note-taking and keeping the team on track, which gave me a reason to ask questions in every meeting. I also recorded our meetings and used Claude to give me short summaries of the technical information I didn’t understand, then brought my follow-up questions to the next meeting. By the time I was asked to help build the robot’s arms, I understood how the robot worked well enough to say yes, even though my prototyping experience stopped at Figma. I built the arms with a performance arts technology student, then iterated on the design with engineering and robotics students to meet the technical requirements.</p>
+          <p class="cs__p"><strong>Translating research for the team:</strong> When we designed the survey, I felt comfortable establishing the measures and operationalizing them into questions based on the research literature I had reviewed. When teammates asked why we were wording a question a certain way, I explained what the research said, why it said it, and what it meant for the decision, in plain terms that worked for engineers, roboticists, and musicians alike. This is something I had to learn how to do. In the end, their questions made the survey clearer, and I took the same approach into the other research decisions, including the study design. That approach made me a better cross-functional collaborator.</p>
+        </section>
+
+        <!-- methods -->
+        <section class="cs__section" id="methods">
+          <p class="cs__eyebrow">research methods: within-subjects experiment (planned)</p>
+          <p class="cs__p">For our study, we are aiming to recruit 20 musicians. Participants get up to five minutes to practice a clapping score when they first arrive, and the whole session takes about 45 minutes.</p>
+          <div class="callout callout--red callout--tint callout--center callout--wide">
+            <p class="statement__text">Participants will perform the same clapping duet four times with a study team member, Evan, who plays the second part at the same time. They will be in separate rooms.</p>
+          </div>
+          <p class="cs__p">The separate rooms are simulated with a partition, and they will hear each other through headphones. Each time, they perform they will see something different:</p>
+          <ul class="cs__list">
+            <li>Audio only</li>
+            <li>Audio and live video of the co-performer</li>
+            <li>Audio and an on-screen animation of the co-performer's clapping</li>
+            <li>Audio and the robot mirroring the co-performer's clapping</li>
+          </ul>
+          <p class="cs__p">Everyone plays the same piece at the same tempo. The order of conditions is randomized for each participant.</p>
+
+          <!-- FIGURE: study design flow diagram (no caption in write-up) -->
+          <figure class="fig">
+            <div class="fig__frame">
+              <img src="robot-study-design.png" width="2048" height="938" loading="lazy" alt="Flow diagram of the study: recruit, warm up, clapping duet in four rounds under four display conditions, then motion capture and survey measures, then analysis">
+            </div>
+          </figure>
+
+          <p class="cs__eyebrow cs__eyebrow--next">what we will measure</p>
+          <ul class="cs__list">
+            <li>We will measure what participants do. Participants wear motion capture gloves with reflective markers, and a 16-camera Qualisys motion capture system tracks both performers' hands. This shows how closely the two stay in sync.</li>
+            <li>We also want to understand their experience, so after the session, they will complete a survey that asks about each condition separately. Twelve rating questions cover performance quality, timing, presence, connectedness, enjoyment, and whether they would use the setup again. An open response asks them to describe each condition.</li>
+          </ul>
+          <p class="cs__p">I designed the survey from an extensive literature review on what makes a good duet. That review is how we decided what to measure.</p>
+
+          <p class="cs__eyebrow cs__eyebrow--next">analysis plan</p>
+          <div class="callout callout--red callout--tint callout--center callout--wide callout--after-label">
+            <p class="statement__text">Compare the four conditions on the motion capture and survey measures.</p>
+          </div>
+          <ul class="cs__list">
+            <li>Compare survey with motion capture. The survey captures how performers perceived the performance, and motion capture gives an objective measure of sync. We want to see whether what people feel matches what they do.</li>
+            <li>Run sentiment analysis on the words participants use to describe each condition.</li>
+          </ul>
+        </section>
+
+        <!-- what's next -->
+        <section class="cs__section" id="next">
+          <p class="cs__eyebrow">what's next</p>
+          <ul class="cs__list">
+            <li>Run the pilot in late October 2026 and adjust the protocol and survey based on what we learn.</li>
+            <li>Run the full study in November and analyze the motion capture and survey data.</li>
+            <li>Update this case study with findings once we have results.</li>
+          </ul>
+        </section>
+
+        <!-- contribution -->
+        <section class="cs__section" id="contribution">
+          <p class="cs__eyebrow">contribution</p>
+          <ul class="cs__list">
+            <li>Brought a research perspective to the team and led all research work: survey design, experimental design, and research operations and planning.</li>
+            <li>Conducted literature reviews that informed the study design, the survey, and the arm prototype.</li>
+            <li>Built the robot's arms with a performance arts technology student and iterated on the design with engineering and robotics students.</li>
+            <li>Designed the experimental study and the post-session survey.</li>
+            <li>Preparing and running the pilot, scheduled for late October 2026.</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- ===== More work ===== -->
+    <section class="more">
+      <p class="work__label">more work</p>
+      <div class="work__grid">
+
+        <a class="card" href="case-study-trust.html">
+          <div class="card__image">
+            <img src="ai-chatbot-trust.png" width="1080" height="1080" loading="lazy" alt="A chat box reading “Can I trust this?” placed over the Harvard wordmark">
+            <div class="card__pills"><span class="pill">Harvard Library</span></div>
+          </div>
+          <h2 class="card__title">Understanding Generative AI Chatbots and User Trust</h2>
+          <p class="card__tags">contextual inquiry · affinity diagramming</p>
+        </a>
+
+        <a class="card" href="case-study-search.html">
+          <div class="card__image">
+            <img src="harvard-library-search.gif" width="450" height="450" loading="lazy" alt="Animated view of a digitized newspaper page in the Library of Congress image viewer">
+            <div class="card__pills"><span class="pill">Harvard Library</span></div>
+          </div>
+          <h2 class="card__title">Re-imagining Harvard Library’s Search Experience</h2>
+          <p class="card__tags">usability testing · comparative evaluation · lo-fi prototyping</p>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copy">© October 2026</p>
+    <nav class="footer__links">
+      <a href="mailto:kortega@umich.edu">email</a>
+      <a href="https://www.linkedin.com/in/ortegakelly" target="_blank" rel="noopener">linkedin</a>
+    </nav>
+  </footer>
+
+  <script>
+    /* Sticky nav: highlight the section currently in view */
+    (function () {
+      var toc = document.querySelector('.toc');
+      if (!toc) return;
+      var links = Array.prototype.slice.call(toc.querySelectorAll('.toc__list a[href^="#"]'));
+      var items = links.map(function (a) {
+        return { link: a, section: document.getElementById(a.getAttribute('href').slice(1)) };
+      }).filter(function (i) { return i.section; });
+      var mobile = window.matchMedia('(max-width: 800px)');
+      var current = null, ticking = false;
+
+      function setActive(item) {
+        if (item === current) return;
+        current = item;
+        links.forEach(function (a) { a.removeAttribute('aria-current'); });
+        if (!item) return;
+        item.link.setAttribute('aria-current', 'true');
+        /* On phones the nav is a sideways strip: keep the active item in view */
+        if (mobile.matches) {
+          var left = item.link.offsetLeft - (toc.clientWidth - item.link.offsetWidth) / 2;
+          toc.scrollTo({ left: left, behavior: 'smooth' });
+        }
+      }
+
+      function update() {
+        ticking = false;
+        var line = window.innerHeight * 0.35;
+        var active = null;
+        items.forEach(function (i) {
+          if (i.section.getBoundingClientRect().top <= line) active = i;
+        });
+        setActive(active);
+      }
+
+      function onScroll() {
+        if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      update();
+    })();
+  </script>
+
+</body>
+</html>
