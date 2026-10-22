@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive wireframes with research notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+
+*{box-sizing:border-box}
+body{margin:0;background:#fff;font-family:'Inter',system-ui,sans-serif;color:#1a1a1a}
+.b{position:absolute;border:1px solid #1a1a1a;background:#fff;display:flex;align-items:center;padding:0 10px;font-size:12px;color:#1a1a1a}
+.t{position:absolute;font-size:12px;white-space:nowrap;line-height:1.2}
+.bar{position:absolute;background:#e4e4e4}
+.hl{position:absolute;background:#ffe45c}
+.ln{position:absolute;background:#1a1a1a}
+.thin{position:absolute;background:#b3b3b3}
+
+
+:root{--ink:#1a1a1a;--mute:#595959;--page:#f6f6f8}
+html,body{margin:0;background:var(--page);font-family:'Inter',system-ui,sans-serif;color:var(--ink)}
+.wrap{max-width:1100px;margin:0 auto;padding:4px 0 8px}
+.label{margin:0 0 10px 0;font:600 15px 'Inter',system-ui,sans-serif;color:var(--ink)}
+.sec + .sec{margin-top:32px}
+.mk:focus-visible,#toggle:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.frame{position:relative;background:#fff;overflow:hidden}
+.view{position:relative;width:100%}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+.canvas{position:relative;margin:0 auto}
+.narrow .mk{width:24px;height:24px;margin:-12px 0 0 -12px;font-size:11px}
+.stage{position:absolute;left:0;top:0;transform-origin:0 0;background:#fff}
+.wire-inner{position:absolute;left:0;top:0;width:1000px;height:600px;border:1px solid var(--ink);background:#fff;overflow:hidden}
+.wire-inner.tall{height:640px}
+.markers{position:absolute;inset:0;pointer-events:none}
+.markers.off{display:none}
+.mk{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;border:1.5px solid var(--ink);border-radius:50%;background:var(--ink);color:#fff;font:600 12px/1 'Inter',system-ui,sans-serif;padding:0;display:flex;align-items:center;justify-content:center;z-index:5;cursor:pointer;pointer-events:auto}
+.mk::after{content:"";position:absolute;inset:-9px}
+.mk.on{background:#fff;color:var(--ink)}
+.note{position:absolute;z-index:10;width:320px;max-width:calc(100% - 16px);padding:12px 14px;background:#fff;color:var(--ink);border:1px solid var(--ink);box-shadow:3px 3px 0 #d0d0d0;font-size:14px;line-height:1.45;text-align:left}
+.note[hidden]{display:none}
+.panel{margin-top:10px;padding:12px 14px;background:#fff;border:1px solid var(--ink);font-size:14px;line-height:1.45;display:none}
+.panel.show{display:block}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px;flex-wrap:wrap}
+.legend{font-size:13px;color:var(--mute)}
+#toggle{height:36px;padding:0 14px;border:1px solid var(--ink);background:#fff;color:var(--ink);font:500 13px 'Inter',system-ui,sans-serif;cursor:pointer;border-radius:0}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="sec" data-view="results">
+<h3 class="label">1. Search results</h3>
+<div class="frame">
+<div class="view">
+<div class="scroller"><div class="canvas">
+<div class="stage"><div class="wire-inner tall"><div class="t" style="left:24px;top:28px;color:#6b6b6b;font-size:13px">logo</div><div class="ln" style="left:0px;top:70px;width:1000px;height:1px"></div><div class="ln" style="left:210px;top:70px;width:1px;height:570px"></div><div class="t" style="left:22px;top:92px;font-size:14px;font-weight:500">Search Filters</div><div class="t" style="left:22px;top:134px;font-weight:500">Creator</div><div class="bar" style="left:22px;top:160px;width:150px;height:10px"></div><div class="bar" style="left:22px;top:176px;width:150px;height:10px"></div><div class="bar" style="left:22px;top:192px;width:120px;height:10px"></div><div class="t" style="left:22px;top:218px;font-weight:500">Date</div><div class="bar" style="left:22px;top:244px;width:150px;height:10px"></div><div class="bar" style="left:22px;top:260px;width:150px;height:10px"></div><div class="bar" style="left:22px;top:276px;width:120px;height:10px"></div><div class="t" style="left:22px;top:302px;font-weight:500">Place of Origin</div><div class="bar" style="left:22px;top:328px;width:150px;height:10px"></div><div class="bar" style="left:22px;top:344px;width:150px;height:10px"></div><div class="bar" style="left:22px;top:360px;width:120px;height:10px"></div><div class="t" style="left:22px;top:386px;font-weight:500">Publisher</div><div class="bar" style="left:22px;top:412px;width:150px;height:10px"></div><div class="bar" style="left:22px;top:428px;width:150px;height:10px"></div><div class="bar" style="left:22px;top:444px;width:120px;height:10px"></div><div class="t" style="left:22px;top:470px;font-weight:500">Language</div><div class="bar" style="left:22px;top:496px;width:150px;height:10px"></div><div class="bar" style="left:22px;top:512px;width:150px;height:10px"></div><div class="bar" style="left:22px;top:528px;width:120px;height:10px"></div><div class="t" style="left:234px;top:92px;font-size:14px;font-weight:500">N of NNN results</div><div class="b" style="left:808px;top:86px;width:114px;height:26px;justify-content:center;font-size:11px;padding:0">sort by: relevance</div><div class="b" style="left:940px;top:89px;width:20px;height:20px;justify-content:center;padding:0;border-radius:50%;font-size:11px;font-weight:600">i</div><div class="b" style="left:228px;top:128px;width:748px;height:204px;"></div><div class="b" style="left:252px;top:148px;width:90px;height:114px;border-color:#1a1a1a"></div><div class="thin" style="left:262px;top:158px;width:36px;height:2px"></div><div class="thin" style="left:262px;top:164px;width:64px;height:2px"></div><div class="thin" style="left:262px;top:170px;width:56px;height:2px"></div><div class="thin" style="left:262px;top:176px;width:63px;height:2px"></div><div class="thin" style="left:262px;top:182px;width:59px;height:2px"></div><div class="thin" style="left:262px;top:188px;width:64px;height:2px"></div><div class="thin" style="left:262px;top:194px;width:61px;height:2px"></div><div class="thin" style="left:262px;top:200px;width:64px;height:2px"></div><div class="thin" style="left:262px;top:206px;width:53px;height:2px"></div><div class="thin" style="left:262px;top:212px;width:64px;height:2px"></div><div class="thin" style="left:262px;top:218px;width:48px;height:2px"></div><div class="thin" style="left:262px;top:224px;width:64px;height:2px"></div><div class="thin" style="left:262px;top:230px;width:59px;height:2px"></div><div class="thin" style="left:262px;top:236px;width:64px;height:2px"></div><div class="hl" style="left:272px;top:161px;width:22px;height:4px"></div><div class="hl" style="left:262px;top:179px;width:12px;height:4px"></div><div class="hl" style="left:300px;top:191px;width:20px;height:4px"></div><div class="hl" style="left:276px;top:203px;width:16px;height:4px"></div><div class="b" style="left:362px;top:148px;width:380px;height:14px;"></div><div class="t" style="left:362px;top:182px;">metadata</div><div class="t" style="left:432px;top:182px;">metadata</div><div class="t" style="left:502px;top:182px;">metadata</div><div class="t" style="left:362px;top:212px;">N matches in item</div><div class="ln" style="left:362px;top:226px;width:3px;height:36px"></div><div style="position:absolute;left:362px;top:226px;width:3px;height:36px;background:#c9c9c9"></div><div class="bar" style="left:372px;top:226px;width:578px;height:16px"></div><div class="hl" style="left:557px;top:226px;width:31px;height:16px"></div><div class="bar" style="left:372px;top:248px;width:537px;height:16px"></div><div class="hl" style="left:426px;top:248px;width:31px;height:16px"></div><div class="hl" style="left:785px;top:248px;width:31px;height:16px"></div><div class="b" style="left:362px;top:280px;width:92px;height:32px;justify-content:center;padding:0">Full View</div><div class="b" style="left:464px;top:280px;width:112px;height:32px;justify-content:center;padding:0">About this Item</div><div class="b" style="left:228px;top:348px;width:748px;height:204px;"></div><div class="b" style="left:252px;top:368px;width:90px;height:114px;border-color:#1a1a1a"></div><div class="thin" style="left:262px;top:378px;width:36px;height:2px"></div><div class="thin" style="left:262px;top:384px;width:64px;height:2px"></div><div class="thin" style="left:262px;top:390px;width:56px;height:2px"></div><div class="thin" style="left:262px;top:396px;width:63px;height:2px"></div><div class="thin" style="left:262px;top:402px;width:59px;height:2px"></div><div class="thin" style="left:262px;top:408px;width:64px;height:2px"></div><div class="thin" style="left:262px;top:414px;width:61px;height:2px"></div><div class="thin" style="left:262px;top:420px;width:64px;height:2px"></div><div class="thin" style="left:262px;top:426px;width:53px;height:2px"></div><div class="thin" style="left:262px;top:432px;width:64px;height:2px"></div><div class="thin" style="left:262px;top:438px;width:48px;height:2px"></div><div class="thin" style="left:262px;top:444px;width:64px;height:2px"></div><div class="thin" style="left:262px;top:450px;width:59px;height:2px"></div><div class="thin" style="left:262px;top:456px;width:64px;height:2px"></div><div class="hl" style="left:272px;top:381px;width:22px;height:4px"></div><div class="hl" style="left:262px;top:399px;width:12px;height:4px"></div><div class="hl" style="left:300px;top:411px;width:20px;height:4px"></div><div class="hl" style="left:276px;top:423px;width:16px;height:4px"></div><div class="b" style="left:362px;top:368px;width:380px;height:14px;"></div><div class="t" style="left:362px;top:402px;">metadata</div><div class="t" style="left:432px;top:402px;">metadata</div><div class="t" style="left:502px;top:402px;">metadata</div><div class="t" style="left:362px;top:432px;">N matches in item</div><div class="ln" style="left:362px;top:446px;width:3px;height:36px"></div><div style="position:absolute;left:362px;top:446px;width:3px;height:36px;background:#c9c9c9"></div><div class="bar" style="left:372px;top:446px;width:578px;height:16px"></div><div class="hl" style="left:557px;top:446px;width:31px;height:16px"></div><div class="bar" style="left:372px;top:468px;width:537px;height:16px"></div><div class="hl" style="left:426px;top:468px;width:31px;height:16px"></div><div class="hl" style="left:785px;top:468px;width:31px;height:16px"></div><div class="b" style="left:362px;top:500px;width:92px;height:32px;justify-content:center;padding:0">Full View</div><div class="b" style="left:464px;top:500px;width:112px;height:32px;justify-content:center;padding:0">About this Item</div><div class="b" style="left:228px;top:568px;width:748px;height:56px;justify-content:center;font-size:11px">more results</div></div></div>
+<div class="markers"></div>
+</div></div>
+</div>
+<div class="note" role="tooltip" hidden></div>
+</div>
+<div class="panel" aria-live="polite"></div>
+</section>
+<section class="sec" data-view="viewer">
+<h3 class="label">2. Item viewer</h3>
+<div class="frame">
+<div class="view">
+<div class="scroller"><div class="canvas">
+<div class="stage"><div class="wire-inner"><div class="b" style="left:14px;top:10px;width:100px;height:32px;justify-content:center;color:#6b6b6b">logo</div><div class="b" style="left:124px;top:10px;width:552px;height:32px;color:#6b6b6b">search query</div><div class="b" style="left:686px;top:10px;width:90px;height:32px;justify-content:center;">search</div><div class="b" style="left:786px;top:10px;width:200px;height:32px;justify-content:center;">search inside all texts</div><div class="t" style="left:14px;top:54px;font-weight:600">title</div><div class="t" style="left:72px;top:54px;">date</div><div class="t" style="left:120px;top:54px;">page N of NN</div><div class="ln" style="left:0px;top:78px;width:1000px;height:1px"></div><div class="ln" style="left:190px;top:78px;width:1px;height:522px"></div><div class="ln" style="left:590px;top:78px;width:1px;height:482px"></div><div class="ln" style="left:191px;top:560px;width:809px;height:1px"></div><div class="b" style="left:14px;top:92px;width:162px;height:32px;">About this Item</div><div class="b" style="left:14px;top:130px;width:162px;height:32px;">Download</div><div class="b" style="left:14px;top:168px;width:162px;height:32px;">Plain Text</div><div class="t" style="left:14px;top:214px;font-weight:500">Search in this Text</div><div class="b" style="left:14px;top:238px;width:124px;height:32px;color:#6b6b6b">soccer</div><div class="b" style="left:144px;top:238px;width:32px;height:32px;justify-content:center;padding:0">&rarr;</div><div class="b" style="left:14px;top:282px;width:28px;height:22px;justify-content:center;padding:0;font-size:9px">&#9650;</div><div class="t" style="left:52px;top:287px;font-size:10px">1 out of 12 matches</div><div class="b" style="left:148px;top:282px;width:28px;height:22px;justify-content:center;padding:0;font-size:9px">&#9660;</div><div class="t" style="left:14px;top:316px;font-weight:500">All Matches</div><div class="b" style="left:14px;top:338px;width:162px;height:58px;"></div><div class="bar" style="left:24px;top:350px;width:100px;height:6px"></div><div class="hl" style="left:24px;top:362px;width:30px;height:6px"></div><div class="bar" style="left:62px;top:362px;width:90px;height:6px"></div><div class="bar" style="left:24px;top:374px;width:120px;height:6px"></div><div class="b" style="left:14px;top:412px;width:162px;height:32px;">Cite this item</div><div class="b" style="left:14px;top:450px;width:162px;height:32px;">Rights and Access</div><div class="b" style="left:14px;top:488px;width:162px;height:32px;">Share</div><div class="b" style="left:14px;top:526px;width:162px;height:32px;">Transcription Info</div><div class="t" style="left:206px;top:92px;font-weight:500">text (OCR)</div><div class="bar" style="left:206px;top:150px;width:250px;height:9px"></div><div class="bar" style="left:468px;top:150px;width:104px;height:9px"></div><div class="bar" style="left:206px;top:178px;width:160px;height:9px"></div><div class="bar" style="left:378px;top:178px;width:194px;height:9px"></div><div class="bar" style="left:206px;top:206px;width:250px;height:9px"></div><div class="bar" style="left:468px;top:206px;width:104px;height:9px"></div><div class="bar" style="left:206px;top:234px;width:90px;height:9px"></div><div class="bar" style="left:308px;top:234px;width:140px;height:9px"></div><div class="bar" style="left:460px;top:234px;width:112px;height:9px"></div><div class="bar" style="left:206px;top:290px;width:250px;height:9px"></div><div class="bar" style="left:468px;top:290px;width:104px;height:9px"></div><div class="bar" style="left:206px;top:318px;width:366px;height:9px"></div><div class="bar" style="left:206px;top:346px;width:90px;height:9px"></div><div class="bar" style="left:308px;top:346px;width:264px;height:9px"></div><div class="bar" style="left:206px;top:374px;width:250px;height:9px"></div><div class="bar" style="left:468px;top:374px;width:104px;height:9px"></div><div class="bar" style="left:206px;top:430px;width:250px;height:9px"></div><div class="bar" style="left:468px;top:430px;width:104px;height:9px"></div><div class="bar" style="left:206px;top:458px;width:90px;height:9px"></div><div class="bar" style="left:308px;top:458px;width:140px;height:9px"></div><div class="bar" style="left:206px;top:486px;width:366px;height:9px"></div><div class="bar" style="left:206px;top:514px;width:250px;height:9px"></div><div class="bar" style="left:468px;top:514px;width:104px;height:9px"></div><div class="hl" style="left:206px;top:178px;width:50px;height:9px"></div><div class="hl" style="left:510px;top:234px;width:40px;height:9px"></div><div class="hl" style="left:300px;top:318px;width:46px;height:9px"></div><div class="hl" style="left:340px;top:458px;width:44px;height:9px"></div><div class="t" style="left:606px;top:92px;font-weight:500">image (scan)</div><div class="b" style="left:606px;top:128px;width:378px;height:410px;padding:0"></div><div class="t" style="left:758px;top:326px;">image of page</div><div class="hl" style="left:640px;top:152px;width:52px;height:9px"></div><div class="hl" style="left:880px;top:230px;width:52px;height:9px"></div><div class="hl" style="left:700px;top:322px;width:52px;height:9px"></div><div class="hl" style="left:660px;top:380px;width:52px;height:9px"></div><div class="hl" style="left:790px;top:470px;width:52px;height:9px"></div><div class="b" style="left:908px;top:496px;width:30px;height:30px;justify-content:center;padding:0">&minus;</div><div class="b" style="left:944px;top:496px;width:30px;height:30px;justify-content:center;padding:0">+</div><div class="t" style="left:716px;top:574px;letter-spacing:.08em">&lsaquo;&nbsp;&nbsp;18 / 26&nbsp;&nbsp;&rsaquo;</div></div></div>
+<div class="markers"></div>
+</div></div>
+</div>
+<div class="note" role="tooltip" hidden></div>
+</div>
+<div class="panel" aria-live="polite"></div>
+</section>
+<div class="toolbar">
+<span class="legend" id="legend">Hover or tap a numbered marker to read the research note.</span>
+<button type="button" id="toggle">Hide annotations</button>
+</div>
+</div>
+<script>
+
+(function(){
+var DATA = {"results": {"w": 1000, "h": 640, "notes": [{"n": 1, "x": 754, "y": 155, "t": "Some participants wanted to be able to click the item title. We recommend linking it to the Full View."}, {"n": 2, "x": 486, "y": 218, "t": "Showing the number of matches per item helps participants gauge how relevant a result is before opening it. Gauging relevance was important for participants. A book with many matches signals the keyword is important to the text. We recommend showing the match count on every result."}, {"n": 3, "x": 342, "y": 148, "t": "The image thumbnail helps participants recognize what kind of document a result is. The highlights shown within the thumbnail were the strongest cue that the search looked inside the full text. We recommend keeping the thumbnail with its highlights."}, {"n": 4, "x": 454, "y": 312, "t": "“Full View” made sense to nearly all participants. We recommend keeping it."}, {"n": 5, "x": 576, "y": 312, "t": "“Catalog Record” was the most confusing term for participants. “About this Item” was clearer because it describes what they’ll find there. We recommend using “About this Item”."}, {"n": 6, "x": 968, "y": 80, "t": "Participants wanted to know how relevancy was determined. We recommend adding an info icon beside the sort control that opens a brief, plain-language explanation on hover, so users can get a quick answer without leaving their results."}, {"n": 7, "x": 808, "y": 86, "t": "Participants wanted control over how results were sorted and specifically liked how the LOC site let them do this. We recommend offering clear sort controls."}]}, "viewer": {"w": 1000, "h": 640, "notes": [{"n": 1, "x": 290, "y": 98, "t": "Formatting issues in the OCR text made participants doubt its accuracy, so they valued being able to compare the text and scan views side by side to verify it against the original. We recommend keeping this layout."}, {"n": 2, "x": 190, "y": 108, "t": "We recommend keeping “About this Item” at the top so that users can easily navigate to metadata information."}, {"n": 3, "x": 190, "y": 184, "t": "Participants expected the “Plain Text” format view to appear in the sidebar alongside the other functions, rather than grouped with the image zoom controls. We recommend placing it in the sidebar."}, {"n": 4, "x": 190, "y": 224, "t": "Participants easily understood “Search in this Text”. We recommend keeping it."}, {"n": 5, "x": 190, "y": 293, "t": "Participants wanted “Search in this Text” to work like Ctrl+F so they can jump to each match instead of scrolling to find it. We recommend a step-through control like this one beneath the search input, which takes users to each match directly."}, {"n": 6, "x": 190, "y": 447, "t": "Participants expected Citations to be in the sidebar with the other functions. They also wanted rights and access close to the citations, since they were related concepts. We recommend grouping these together in the sidebar."}, {"n": 7, "x": 190, "y": 542, "t": "Participants voiced strong doubts about transcription accuracy. We recommend showing the transcription source and an accuracy estimate (like Swedish National Archives does), so users can judge how much to trust the OCR."}, {"n": 8, "x": 590, "y": 98, "t": "We recommend making both views collapsible so that users can easily close either view."}, {"n": 9, "x": 944, "y": 235, "t": "We recommend carrying over the highlighting of search terms in both the image and text views so that users don’t have to look for the highlights and can easily spot them."}, {"n": 10, "x": 830, "y": 581, "t": "When a user opens “Full View” from a search, we recommend opening directly to the first match, rather than to the title page."}, {"n": 11, "x": 500, "y": 622, "t": "We recommend placing item information below the item viewer."}, {"n": 12, "x": 986, "y": 42, "t": "“Search inside all texts” tests well because it plainly describes what the search does. Participants preferred variations of this over “full text search and all fields,” which read as an internal concept and confused them. We recommend keeping this label."}]}};
+var legend = document.getElementById('legend');
+var toggle = document.getElementById('toggle');
+var secs = [];
+var hover = null, pin = null, show = true;
+
+Array.prototype.forEach.call(document.querySelectorAll('.sec'), function(el){
+  var name = el.getAttribute('data-view');
+  var s = {
+    name: name, el: el,
+    frame: el.querySelector('.frame'),
+    note: el.querySelector('.note'),
+    panel: el.querySelector('.panel'),
+    canvas: el.querySelector('.canvas'),
+    stage: el.querySelector('.stage'),
+    markers: el.querySelector('.markers'),
+    btns: {}, scale: 1
+  };
+  s.note.id = 'note-' + name;
+  DATA[name].notes.forEach(function(n){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'mk';
+    b.textContent = n.n;
+    b.setAttribute('aria-label', 'Research note ' + n.n);
+    b.addEventListener('pointerenter', function(e){ if (e.pointerType === 'mouse') { hover = {name: name, id: n.n}; render(); } });
+    b.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') { hover = null; render(); } });
+    b.addEventListener('focus', function(){ if (b.matches(':focus-visible')) { hover = {name: name, id: n.n}; render(); } });
+    b.addEventListener('blur', function(){ hover = null; render(); });
+    b.addEventListener('click', function(e){
+      e.stopPropagation();
+      pin = (pin && pin.name === name && pin.id === n.n) ? null : {name: name, id: n.n};
+      hover = null; render();
+    });
+    s.markers.appendChild(b);
+    s.btns[n.n] = b;
+  });
+  s.frame.addEventListener('click', function(){ pin = null; render(); });
+  secs.push(s);
+});
+
+function noteFor(name, id){
+  var list = DATA[name].notes;
+  for (var i = 0; i < list.length; i++) if (list[i].n === id) return list[i];
+  return null;
+}
+
+function layout(){
+  secs.forEach(function(s){
+    var d = DATA[s.name];
+    var fw = s.frame.clientWidth;
+    var isNarrow = fw < 640;
+    s.narrow = isNarrow;
+    s.frame.classList.toggle('narrow', isNarrow);
+    var sc = isNarrow ? 0.66 : Math.min(fw / d.w, 1.2);
+    s.scale = sc;
+    s.stage.style.width = d.w + 'px';
+    s.stage.style.height = d.h + 'px';
+    s.stage.style.transform = 'scale(' + sc + ')';
+    s.canvas.style.width = (d.w * sc) + 'px';
+    s.canvas.style.height = (d.h * sc) + 'px';
+    d.notes.forEach(function(n){
+      s.btns[n.n].style.left = (n.x * sc) + 'px';
+      s.btns[n.n].style.top = (n.y * sc) + 'px';
+    });
+  });
+  var anyNarrow = secs.some(function(s){ return s.narrow; });
+  legend.textContent = anyNarrow
+    ? 'Swipe sideways to see the whole screen. Tap a numbered marker to read the research note.'
+    : 'Hover or tap a numbered marker to read the research note.';
+  render();
+}
+
+function render(){
+  secs.forEach(function(s){
+    var openId = null;
+    if (hover && hover.name === s.name) openId = hover.id;
+    else if (pin && pin.name === s.name) openId = pin.id;
+    Object.keys(s.btns).forEach(function(k){
+      var on = (openId === Number(k));
+      s.btns[k].classList.toggle('on', on);
+      if (on) s.btns[k].setAttribute('aria-describedby', s.note.id); else s.btns[k].removeAttribute('aria-describedby');
+    });
+    var n = (openId != null && show) ? noteFor(s.name, openId) : null;
+    if (!n) { s.note.hidden = true; s.panel.classList.remove('show'); s.panel.textContent = ''; return; }
+    if (s.narrow) {
+      s.note.hidden = true;
+      s.panel.textContent = n.n + '. ' + n.t;
+      s.panel.classList.add('show');
+    } else {
+      s.panel.classList.remove('show');
+      s.note.textContent = n.t;
+      s.note.hidden = false;
+      var fw = s.frame.clientWidth, fh = s.frame.clientHeight;
+      var br = s.btns[n.n].getBoundingClientRect(), fr = s.frame.getBoundingClientRect();
+      var mx = br.left - fr.left + br.width / 2, my = br.top - fr.top + br.height / 2;
+      var w = s.note.offsetWidth, h = s.note.offsetHeight;
+      var left = mx + 22;
+      if (left + w > fw - 8) left = mx - 22 - w;
+      if (left < 8) left = 8;
+      var top = my - 14;
+      if (top + h > fh - 8) top = fh - 8 - h;
+      if (top < 8) top = 8;
+      s.note.style.left = left + 'px';
+      s.note.style.top = top + 'px';
+    }
+  });
+  postHeight();
+}
+
+toggle.addEventListener('click', function(){
+  show = !show; hover = null; pin = null;
+  toggle.textContent = show ? 'Hide annotations' : 'Show annotations';
+  secs.forEach(function(s){ s.markers.classList.toggle('off', !show); });
+  render();
+});
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { pin = null; hover = null; render(); } });
+window.addEventListener('resize', layout);
+
+function postHeight(){
+  if (window.parent === window) return;
+  window.parent.postMessage({type: 'wf-height', height: document.documentElement.scrollHeight}, '*');
+}
+if (window.ResizeObserver) new ResizeObserver(function(){ postHeight(); }).observe(document.body);
+
+layout();
+})();
+
+</script>
+</body>
+</html>

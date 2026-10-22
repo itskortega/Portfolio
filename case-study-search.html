@@ -76,6 +76,7 @@
             <p class="cs__eyebrow">quick summary</p>
             <p class="cs__p">Harvard Library’s full-text search was limited, had few features and few users, and the team needed evidence on what works before redesigning it.</p>
             <p class="cs__p">I led 11 moderated usability sessions with Harvard students on two mature platforms, Library of Congress and HathiTrust, then analyzed the sessions into six insights and six recommendations. I delivered actionable insights, lo-fi wireframes, and an evidence-based feature set. The UX &amp; D team is moving forward with the redesign as part of their next large-scale initiative.</p>
+            <p class="cs__p"><a href="#interactive-wireframes">Putting it together</a></p>
           </div>
         </section>
 
@@ -200,7 +201,7 @@
 
             <figure class="fig">
               <div class="fig__frame">
-                <img src="search-rec-02-wireframe.png" width="1432" height="456" loading="lazy" alt="Low-fidelity wireframe of a search result card with match count, thumbnail, longer snippet, sort control, and info icon">
+                <img src="search-rec-02-wireframe.png" width="2000" height="1280" loading="lazy" alt="Low-fidelity wireframe of a search result card with match count, thumbnail, longer snippet, sort control, and info icon">
               </div>
             </figure>
           </article>
@@ -222,7 +223,7 @@
 
             <figure class="fig">
               <div class="fig__frame">
-                <img src="search-rec-03-wireframe.png" width="1732" height="791" loading="lazy" alt="Low-fidelity full view wireframe with a Search in this Text sidebar, match snippets, and step-through controls">
+                <img src="search-rec-03-wireframe.png" width="2000" height="1200" loading="lazy" alt="Low-fidelity full view wireframe with a Search in this Text sidebar, match snippets, and step-through controls">
               </div>
             </figure>
           </article>
@@ -243,7 +244,7 @@
 
             <figure class="fig">
               <div class="fig__frame">
-                <img src="search-rec-04-wireframe.png" width="839" height="330" loading="lazy" alt="Low-fidelity wireframe of a search bar with a Search inside all texts button above a result card with Full View and About this Item buttons">
+                <img src="search-rec-04-wireframe.png" width="2000" height="1200" loading="lazy" alt="Low-fidelity wireframe of a search bar with a Search inside all texts button above a result card with Full View and About this Item buttons">
               </div>
             </figure>
           </article>
@@ -290,26 +291,25 @@
 
             <figure class="fig">
               <div class="fig__frame">
-                <img src="search-rec-06-wireframe.png" width="1732" height="323" loading="lazy" alt="Low-fidelity full view wireframe with the plain-text view in the sidebar">
+                <img src="search-rec-06-wireframe.png" width="2000" height="1200" loading="lazy" alt="Low-fidelity full view wireframe with the plain-text view in the sidebar">
               </div>
             </figure>
           </article>
 
-          
-          <figure class="fig">
-            <div class="fig__frame">
-              <img src="search-wireframe-search-results.png" width="1732" height="1014" loading="lazy" alt="Low-fidelity wireframe of the redesigned search results page">
-            </div>
-          </figure>
-          <p class="cs__p"><strong>Search Results Wireframe</strong></p>
 
-          
-          <figure class="fig fig--spaced">
-            <div class="fig__frame">
-              <img src="search-wireframe-full-view.png" width="1732" height="1283" loading="lazy" alt="Low-fidelity wireframe of the redesigned full view page">
-            </div>
-          </figure>
-          <p class="cs__p"><strong>Full View Wireframe</strong></p>
+          <h2 class="cs__eyebrow cs__eyebrow--next" id="interactive-wireframes">Putting it together</h2>
+          <p class="cs__p">Hover or tap the numbered markers to read the research behind each decision.</p>
+          <iframe id="wf" class="wf" src="interactive-wireframes.html"
+                  title="Interactive wireframes with research notes"
+                  style="width:100%;height:400px;border:0" loading="lazy"></iframe>
+          <script>
+          window.addEventListener('message', function (e) {
+            var f = document.getElementById('wf');
+            if (e.source === f.contentWindow && e.data && e.data.type === 'wf-height') {
+              f.style.height = e.data.height + 'px';
+            }
+          });
+          </script>
         </section>
 
         <!-- impact -->
