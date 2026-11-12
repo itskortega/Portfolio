@@ -856,3 +856,8 @@ html { scroll-padding-top: 96px; }
 #interactive-wireframes { scroll-margin-top: 96px; }
 .wf { display: block; margin-top: 24px; }
 .cs__p a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Interactive lo-fi prototypes (trust case study) */
+.proto { overflow-x: auto; overflow-y: hidden; border-radius: 0 0 16px 0; -webkit-overflow-scrolling: touch; }
+.proto__stage { position: relative; }
+.proto__frame { position: absolute; left: 0; top: 0; border: 0; transform-origin: 0 0; background: #f6f6f8; }

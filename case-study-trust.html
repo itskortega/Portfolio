@@ -147,9 +147,12 @@
               <li><strong>Success looks like:</strong> less time verifying and more misrepresented citations caught.</li>
             </ul>
 
+            <p class="cs__p">Hover or tap the numbered markers to read the research behind each decision.</p>
             <figure class="fig">
-              <div class="fig__frame">
-                <img src="citation-illustration.png" width="3000" height="1920" loading="lazy" alt="Low-fidelity concept of a chatbot answer with a numbered inline citation, a passage preview with the matching words highlighted, and an Open full source button">
+              <div class="proto" data-w="1280" data-h="860">
+                <div class="proto__stage">
+                  <iframe class="proto__frame" src="lofi-1-answer-view.html" title="Interactive low-fidelity prototype: answer view" width="1280" height="860" loading="lazy"></iframe>
+                </div>
               </div>
             </figure>
           </article>
@@ -172,6 +175,15 @@
               <li>Explain when its built-in knowledge ends and whether it searched for anything newer.</li>
               <li><strong>Test next:</strong> does a visible process improve people’s accuracy in judging answers or only their trust?</li>
             </ul>
+
+            <p class="cs__p">Hover or tap the numbered markers to read the research behind each decision.</p>
+            <figure class="fig">
+              <div class="proto" data-w="1280" data-h="860">
+                <div class="proto__stage">
+                  <iframe class="proto__frame" src="lofi-2-process-view.html" title="Interactive low-fidelity prototype: process view" width="1280" height="860" loading="lazy"></iframe>
+                </div>
+              </div>
+            </figure>
           </article>
 
           <article class="block">
@@ -217,6 +229,15 @@
               <li>Address the beliefs participants raised most often, such as recency, source type, and journal prioritization, confirming the ones that are true and correcting the ones that aren’t.</li>
               <li>Treat this as a hypothesis to test: does the explainer change how people prompt or how much they trust the output, and do they read it at all? The answer would also shape the Library’s future research on trust.</li>
             </ul>
+
+            <p class="cs__p">Hover or tap the numbered markers to read the research behind each decision.</p>
+            <figure class="fig">
+              <div class="proto" data-w="1280" data-h="860">
+                <div class="proto__stage">
+                  <iframe class="proto__frame" src="lofi-2b-explainer-open.html" title="Interactive low-fidelity prototype: process view with the explainer open" width="1280" height="860" loading="lazy"></iframe>
+                </div>
+              </div>
+            </figure>
           </article>
 
           <article class="block">
@@ -358,6 +379,30 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       window.addEventListener('resize', onScroll);
       update();
+    })();
+  </script>
+
+  <script>
+    /* Interactive prototypes: each is designed at a fixed 1280 x 860 and is scaled to fit the page.
+       On narrow screens it stops shrinking and scrolls sideways so the text stays readable. */
+    (function () {
+      var MIN_SCALE = 0.6;
+      var boxes = Array.prototype.slice.call(document.querySelectorAll('.proto'));
+      function fit(box) {
+        var w = +box.getAttribute('data-w'), h = +box.getAttribute('data-h');
+        var stage = box.querySelector('.proto__stage'), frame = box.querySelector('.proto__frame');
+        var s = Math.min(1, Math.max(MIN_SCALE, box.clientWidth / w));
+        stage.style.width = (w * s) + 'px';
+        stage.style.height = (h * s) + 'px';
+        frame.style.width = w + 'px';
+        frame.style.height = h + 'px';
+        frame.style.transform = 'scale(' + s + ')';
+      }
+      boxes.forEach(fit);
+      /* On phones, start scrolled to the right edge, where the popups and notes are */
+      boxes.forEach(function (b) { if (b.scrollWidth > b.clientWidth) b.scrollLeft = b.scrollWidth; });
+      window.addEventListener('resize', function () { boxes.forEach(fit); });
+      if (window.ResizeObserver) boxes.forEach(function (b) { new ResizeObserver(function () { fit(b); }).observe(b); });
     })();
   </script>
 

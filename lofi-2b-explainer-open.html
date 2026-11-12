@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lo-fi process view with explainer</title>
+<script src="lofi-react.js"></script>
+<script src="lofi-react-dom.js"></script>
+<script src="lofi-support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font-family:inherit;color:inherit}
+.btn:hover{background:#f0f0f0 !important}
+.chip:hover{background:#f0f0f0 !important}
+.row:hover{background:#f7f7f7}
+.mk:hover{opacity:.85}
+</style>
+</helmet>
+<div style="box-sizing:border-box;min-height:860px;background:#f6f6f8;padding:24px 28px 28px;display:flex;flex-direction:column;gap:14px;font-family:'Inter',system-ui,sans-serif;color:#1a1a1a">
+
+<div style="flex:1;min-height:0;background:#fff;border:1px solid #4a4a4a;display:flex;flex-direction:column;position:relative">
+<header style="height:62px;flex:none;border-bottom:1px solid #4a4a4a;padding:0 26px;display:flex;align-items:center;justify-content:space-between">
+<div style="font-size:15px;color:#6b6b6b;width:236px">logo</div>
+<div style="font-size:15px;font-weight:500;flex:1">Chat title</div>
+</header>
+<div style="display:flex;flex:1;min-height:0;position:relative">
+<nav aria-label="Chats" style="width:236px;flex:none;border-right:1px solid #4a4a4a;padding:22px 22px;display:flex;flex-direction:column;gap:16px;box-sizing:border-box">
+<button type="button" class="btn" style="text-align:left;background:#fff;border:1px solid #4a4a4a;padding:9px 12px;font-size:14px;cursor:pointer">+ New chat</button>
+<div style="font-size:15px;font-weight:500;margin-top:6px">Recent</div>
+<div style="display:flex;flex-direction:column;gap:6px;margin-top:-6px"><div class="row" style="padding:9px 8px;border:1px solid #4a4a4a;"><div style="height:9px;width:88%;background:#e4e4e4"></div></div><div class="row" style="padding:9px 8px;border:1px solid transparent;"><div style="height:9px;width:72%;background:#e4e4e4"></div></div><div class="row" style="padding:9px 8px;border:1px solid transparent;"><div style="height:9px;width:80%;background:#e4e4e4"></div></div><div class="row" style="padding:9px 8px;border:1px solid transparent;"><div style="height:9px;width:64%;background:#e4e4e4"></div></div><div class="row" style="padding:9px 8px;border:1px solid transparent;"><div style="height:9px;width:76%;background:#e4e4e4"></div></div></div>
+<div style="flex:1"></div>
+<div style="border-top:1px solid #4a4a4a;padding-top:14px;display:flex;align-items:center;gap:10px"><div style="width:26px;height:26px;border:1px solid #4a4a4a;border-radius:50%"></div><div style="height:9px;width:50%;background:#e4e4e4"></div></div>
+</nav>
+<main style="flex:1;min-width:0;display:flex;flex-direction:column"><div style="flex:1;padding:24px 28px 10px;display:flex;flex-direction:column;gap:22px;width:100%;max-width:720px;align-self:center;box-sizing:border-box">
+<div style="align-self:flex-end;width:380px;background:#f0f0f0;border:1px solid #4a4a4a;padding:13px 15px"><div style="display:flex;flex-direction:column;gap:8px"><div style="height:9px;width:100%;background:#e4e4e4"></div><div style="height:9px;width:62%;background:#e4e4e4"></div></div></div>
+<div style="display:flex;gap:12px;align-items:flex-start"><div style="width:26px;height:26px;flex:none;border:1px solid #4a4a4a"></div><div style="position:relative;flex:1;min-width:0;border:1px solid #4a4a4a;padding:16px 18px;background:#fff">
+<div style="font-size:14px;font-weight:600;margin-bottom:14px">Thinking…</div>
+<div style="display:flex;gap:12px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:24px;height:24px;flex:none;border:1px solid #4a4a4a;border-radius:50%;font-size:12px;display:flex;align-items:center;justify-content:center">1</div><div style="width:1px;flex:1;background:#4a4a4a;margin:3px 0"></div></div><div style="padding-bottom:16px;flex:1;padding-top:4px"><div style="display:flex;flex-direction:column;gap:8px"><div style="height:9px;width:94%;background:#e4e4e4"></div><div style="height:9px;width:58%;background:#e4e4e4"></div></div></div></div><div style="display:flex;gap:12px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:24px;height:24px;flex:none;border:1px solid #4a4a4a;border-radius:50%;font-size:12px;display:flex;align-items:center;justify-content:center">2</div><div style="width:1px;flex:1;background:#4a4a4a;margin:3px 0"></div></div><div style="padding-bottom:16px;flex:1;padding-top:4px"><div style="display:flex;flex-direction:column;gap:8px"><div style="height:9px;width:90%;background:#e4e4e4"></div><div style="height:9px;width:68%;background:#e4e4e4"></div></div></div></div><div style="display:flex;gap:12px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:24px;height:24px;flex:none;border:1px solid #4a4a4a;border-radius:50%;font-size:12px;display:flex;align-items:center;justify-content:center">3</div><div style="width:1px;flex:1;background:#4a4a4a;margin:3px 0"></div></div><div style="padding-bottom:16px;flex:1;padding-top:4px"><div style="display:flex;flex-direction:column;gap:8px"><div style="height:9px;width:80%;background:#e4e4e4"></div><div style="height:9px;width:44%;background:#e4e4e4"></div></div></div></div><div style="display:flex;gap:12px"><div style="display:flex;flex-direction:column;align-items:center"><div style="width:24px;height:24px;flex:none;border:1px solid #4a4a4a;border-radius:50%;font-size:12px;display:flex;align-items:center;justify-content:center">4</div></div><div style="padding-bottom:0px;flex:1;padding-top:4px"><div style="display:flex;flex-direction:column;gap:8px"><div style="height:9px;width:86%;background:#e4e4e4"></div><div style="height:9px;width:52%;background:#e4e4e4"></div></div></div></div>
+<sc-if value="{{n2.open}}" hint-placeholder-val="{{ false }}"></sc-if></div></div>
+</div><div style="margin:0 26px 22px;border:1px solid #4a4a4a;padding:9px 10px 9px 14px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:14px;color:#6b6b6b">Ask anything</span><button type="button" class="btn" aria-label="Send" style="width:30px;height:30px;border:1px solid #4a4a4a;background:#fff;font-size:15px;cursor:pointer">↑</button></div></main>
+<aside aria-label="Sources used" style="width:292px;flex:none;border-left:1px solid #4a4a4a;padding:22px 20px;display:flex;flex-direction:column;gap:12px;box-sizing:border-box">
+<div style="display:flex;justify-content:space-between;font-size:15px;font-weight:500"><span>Sources used</span><span style="color:#6b6b6b;font-size:13px">4 of 4</span></div>
+<div class="row" style="border:1px solid #4a4a4a;padding:12px;display:flex;gap:10px;background:#fff"><div style="width:22px;height:22px;flex:none;border:1px solid #4a4a4a;font-size:12px;display:flex;align-items:center;justify-content:center">1</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px"><div style="font-size:11px;letter-spacing:.06em;color:#6b6b6b">DATABASE</div><div style="display:flex;flex-direction:column;gap:8px"><div style="height:10px;width:92%;background:#c9c9c9"></div><div style="height:10px;width:60%;background:#c9c9c9"></div></div><div style="display:flex;align-items:center;gap:8px"><span style="font-size:12px;border:1px solid #4a4a4a;padding:1px 8px">Full text</span><span style="font-size:12px;color:#6b6b6b">year</span></div></div></div><div class="row" style="border:1px solid #4a4a4a;padding:12px;display:flex;gap:10px;background:#fff"><div style="width:22px;height:22px;flex:none;border:1px solid #4a4a4a;font-size:12px;display:flex;align-items:center;justify-content:center">2</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px"><div style="font-size:11px;letter-spacing:.06em;color:#6b6b6b">DATABASE</div><div style="display:flex;flex-direction:column;gap:8px"><div style="height:10px;width:88%;background:#c9c9c9"></div><div style="height:10px;width:70%;background:#c9c9c9"></div></div><div style="display:flex;align-items:center;gap:8px"><span style="font-size:12px;border:1px solid #4a4a4a;padding:1px 8px">Full text</span><span style="font-size:12px;color:#6b6b6b">year</span></div></div></div><div class="row" style="border:1px solid #4a4a4a;padding:12px;display:flex;gap:10px;background:#fff"><div style="width:22px;height:22px;flex:none;border:1px solid #4a4a4a;font-size:12px;display:flex;align-items:center;justify-content:center">3</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px"><div style="font-size:11px;letter-spacing:.06em;color:#6b6b6b">DATABASE</div><div style="display:flex;flex-direction:column;gap:8px"><div style="height:10px;width:70%;background:#c9c9c9"></div></div><div style="display:flex;align-items:center;gap:8px"><span style="font-size:12px;border:1px solid #4a4a4a;padding:1px 8px">Full text</span><span style="font-size:12px;color:#6b6b6b">year</span></div></div></div><div class="row" style="border:1px solid #4a4a4a;padding:12px;display:flex;gap:10px;background:#fff"><div style="width:22px;height:22px;flex:none;border:1px solid #4a4a4a;font-size:12px;display:flex;align-items:center;justify-content:center">4</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px"><div style="font-size:11px;letter-spacing:.06em;color:#6b6b6b">DATABASE</div><div style="display:flex;flex-direction:column;gap:8px"><div style="height:10px;width:90%;background:#c9c9c9"></div><div style="height:10px;width:76%;background:#c9c9c9"></div></div><div style="display:flex;align-items:center;gap:8px"><span style="font-size:12px;border:1px solid #4a4a4a;background:#ffe14d;padding:1px 8px">Abstract only</span><span style="font-size:12px;color:#6b6b6b">year</span></div></div></div>
+<div style="flex:1"></div>
+<div style="border-top:1px solid #4a4a4a;padding-top:14px;display:flex;flex-direction:column;gap:11px">
+<div style="font-size:15px;font-weight:500">How current is this?</div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px"><span>Databases searched</span><div style="width:68px"><div style="height:9px;width:100%;background:#e4e4e4"></div></div></div><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px"><span>Built-in knowledge ends</span><div style="width:68px"><div style="height:9px;width:100%;background:#e4e4e4"></div></div></div><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px"><span>Searched for newer studies</span><div style="width:68px"><div style="height:9px;width:100%;background:#e4e4e4"></div></div></div>
+<div style="position:relative"><button type="button" class="btn" onClick="{{openExplainer}}" style="width:100%;text-align:left;background:#fff;border:1px solid #4a4a4a;padding:9px 12px;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;margin-top:4px"><span style="width:16px;height:16px;border:1px solid #4a4a4a;border-radius:50%;font-size:11px;display:flex;align-items:center;justify-content:center;flex:none">i</span>How are sources chosen?</button>
+<sc-if value="{{closedFlag}}" hint-placeholder-val="{{ true }}"><div><button type="button" class="mk" aria-label="Show note 2" onClick="{{n4a.toggle}}" style="{{n4a.mk}}">2</button><sc-if value="{{n4.openClosed}}" hint-placeholder-val="{{ false }}"><div role="note" style="position:absolute;bottom:0;right:calc(100% + 24px);z-index:60;width:320px;box-sizing:border-box;background:#fff;border:1px solid #1a1a1a;padding:14px 16px;font-size:14px;line-height:1.5;color:#1a1a1a;box-shadow:5px 5px 0 #d4d4d4;font-weight:400;text-align:left;white-space:normal;letter-spacing:0">Participants held many beliefs about how sources are chosen, like recency, source type and journal prestige. A short explainer, written with the team, confirms what's true and corrects what isn't. Treat it as a hypothesis to test.</div></sc-if></div></sc-if></div>
+</div></aside>
+<sc-if value="{{explainerOpen}}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;background:rgba(0,0,0,.22);z-index:20"></div>
+<section role="dialog" aria-label="How sources are chosen" style="position:absolute;top:14px;bottom:14px;right:14px;width:384px;z-index:30;background:#fff;border:1px solid #1a1a1a;box-shadow:5px 5px 0 #d4d4d4;padding:20px 22px;box-sizing:border-box;display:flex;flex-direction:column;gap:12px;overflow:visible">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px"><div style="flex:1"><div style="font-size:18px;font-weight:600;margin-bottom:9px">How sources are chosen</div><div style="height:9px;width:62%;background:#e4e4e4"></div></div><button type="button" class="btn" aria-label="Close" onClick="{{closeExplainer}}" style="width:28px;height:28px;border:1px solid #4a4a4a;background:#fff;font-size:13px;cursor:pointer;flex:none">✕</button></div>
+<div style="border:1px solid #4a4a4a;padding:13px 15px"><div style="font-size:14px;font-weight:600;margin-bottom:9px">Where it looks</div><div style="display:flex;flex-direction:column;gap:8px"><div style="height:9px;width:100%;background:#e4e4e4"></div><div style="height:9px;width:66%;background:#e4e4e4"></div></div></div><div style="border:1px solid #4a4a4a;padding:13px 15px"><div style="font-size:14px;font-weight:600;margin-bottom:9px">What it prefers</div><div style="display:flex;flex-direction:column;gap:8px"><div style="height:9px;width:100%;background:#e4e4e4"></div><div style="height:9px;width:66%;background:#e4e4e4"></div></div></div><div style="border:1px solid #4a4a4a;padding:13px 15px"><div style="font-size:14px;font-weight:600;margin-bottom:9px">What it can't read</div><div style="display:flex;flex-direction:column;gap:8px"><div style="height:9px;width:100%;background:#e4e4e4"></div><div style="height:9px;width:66%;background:#e4e4e4"></div></div></div><div style="border:1px solid #4a4a4a;padding:13px 15px"><div style="font-size:14px;font-weight:600;margin-bottom:9px">How current it is</div><div style="display:flex;flex-direction:column;gap:8px"><div style="height:9px;width:100%;background:#e4e4e4"></div><div style="height:9px;width:66%;background:#e4e4e4"></div></div></div>
+<button type="button" class="mk" aria-label="Show note 1" onClick="{{n4b.toggle}}" style="{{n4b.mk}}">1</button><sc-if value="{{n4.openOpen}}" hint-placeholder-val="{{ false }}"><div role="note" style="position:absolute;top:0;right:calc(100% + 24px);z-index:60;width:320px;box-sizing:border-box;background:#fff;border:1px solid #1a1a1a;padding:14px 16px;font-size:14px;line-height:1.5;color:#1a1a1a;box-shadow:5px 5px 0 #d4d4d4;font-weight:400;text-align:left;white-space:normal;letter-spacing:0">Participants held many beliefs about how sources are chosen, like recency, source type and journal prestige. A short explainer, written with the team, can confirm what's true and corrects what isn't. Treat it as something to test.</div></sc-if>
+</section></sc-if>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":860}}'>
+class Component extends DCLogic {
+  state = { explainerOpen: true, note: 'n4' };
+  renderVals() {
+    const ex = this.state.explainerOpen, n = this.state.note;
+    const base = 'position:absolute;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;cursor:pointer;z-index:50;padding:0;';
+    const look = (open) => (open ? 'background:#ffffff;color:#1a1a1a;border:1.5px solid #1a1a1a;' : 'background:#1a1a1a;color:#ffffff;border:1.5px solid #1a1a1a;');
+    const toggle = (id) => () => this.setState({ note: n === id ? null : id });
+    return {
+      explainerOpen: ex,
+      closedFlag: !ex,
+      openExplainer: () => this.setState({ explainerOpen: true }),
+      closeExplainer: () => this.setState({ explainerOpen: false }),
+      n2: { open: n === 'n2', toggle: toggle('n2'), mk: base + 'top:-13px;right:-13px;' + look(n === 'n2') },
+      n4a: { toggle: toggle('n4'), mk: base + 'top:-13px;right:-13px;' + look(n === 'n4') },
+      n4b: { toggle: toggle('n4'), mk: base + 'top:-13px;left:-13px;' + look(n === 'n4') },
+      n4: { openClosed: n === 'n4' && !ex, openOpen: n === 'n4' && ex }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lo-fi answer view</title>
+<script src="lofi-react.js"></script>
+<script src="lofi-react-dom.js"></script>
+<script src="lofi-support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font-family:inherit;color:inherit}
+.btn:hover{background:#f0f0f0 !important}
+.chip:hover{background:#f0f0f0 !important}
+.row:hover{background:#f7f7f7}
+.mk:hover{opacity:.85}
+</style>
+</helmet>
+<div style="box-sizing:border-box;min-height:860px;background:#f6f6f8;padding:24px 28px 28px;display:flex;flex-direction:column;gap:14px;font-family:'Inter',system-ui,sans-serif;color:#1a1a1a">
+
+<div style="flex:1;min-height:0;background:#fff;border:1px solid #4a4a4a;display:flex;flex-direction:column;position:relative">
+<header style="height:62px;flex:none;border-bottom:1px solid #4a4a4a;padding:0 26px;display:flex;align-items:center;justify-content:space-between">
+<div style="font-size:15px;color:#6b6b6b;width:236px">logo</div>
+<div style="font-size:15px;font-weight:500;flex:1">Chat title</div>
+</header>
+<div style="display:flex;flex:1;min-height:0">
+<nav aria-label="Chats" style="width:236px;flex:none;border-right:1px solid #4a4a4a;padding:22px 22px;display:flex;flex-direction:column;gap:16px;box-sizing:border-box">
+<button type="button" class="btn" style="text-align:left;background:#fff;border:1px solid #4a4a4a;padding:9px 12px;font-size:14px;cursor:pointer">+ New chat</button>
+<div style="font-size:15px;font-weight:500;margin-top:6px">Recent</div>
+<div style="display:flex;flex-direction:column;gap:6px;margin-top:-6px"><div class="row" style="padding:9px 8px;border:1px solid #4a4a4a;"><div style="height:9px;width:88%;background:#e4e4e4"></div></div><div class="row" style="padding:9px 8px;border:1px solid transparent;"><div style="height:9px;width:72%;background:#e4e4e4"></div></div><div class="row" style="padding:9px 8px;border:1px solid transparent;"><div style="height:9px;width:80%;background:#e4e4e4"></div></div><div class="row" style="padding:9px 8px;border:1px solid transparent;"><div style="height:9px;width:64%;background:#e4e4e4"></div></div><div class="row" style="padding:9px 8px;border:1px solid transparent;"><div style="height:9px;width:76%;background:#e4e4e4"></div></div></div>
+<div style="flex:1"></div>
+<div style="border-top:1px solid #4a4a4a;padding-top:14px;display:flex;align-items:center;gap:10px"><div style="width:26px;height:26px;border:1px solid #4a4a4a;border-radius:50%"></div><div style="height:9px;width:50%;background:#e4e4e4"></div></div>
+</nav>
+<main style="flex: 1; min-width: 0; display: flex; flex-direction: column; position: relative">
+<div style="flex:1;padding:24px 28px 10px;display:flex;flex-direction:column;gap:22px;width:100%;max-width:720px;align-self:center;box-sizing:border-box">
+<div style="align-self:flex-end;width:380px;background:#f0f0f0;border:1px solid #4a4a4a;padding:13px 15px"><div style="display:flex;flex-direction:column;gap:8px"><div style="height:9px;width:100%;background:#e4e4e4"></div><div style="height:9px;width:62%;background:#e4e4e4"></div></div></div>
+<div style="display:flex;gap:12px;align-items:flex-start"><div style="width:26px;height:26px;flex:none;border:1px solid #4a4a4a"></div><div style="flex:1;min-width:0"><div style="display:flex;flex-direction:column;gap:8px"><div style="height:9px;width:100%;background:#e4e4e4"></div><div style="height:9px;width:70%;background:#e4e4e4"></div></div><div style="margin-top:20px"><div style="font-size:14px;font-weight:600;margin-bottom:10px">Where studies find gains</div>
+<div style="display:flex;gap:10px;align-items:flex-start"><div style="width:5px;height:5px;background:#1a1a1a;border-radius:50%;margin-top:8px;flex:none"></div>
+<div style="flex:1"><div style="display:flex;flex-direction:column;gap:8px;padding-top:3px"><div style="height:9px;width:86%;background:#e4e4e4"></div><div style="display:flex;align-items:center;gap:10px"><div style="height:9px;width:50%;background:#e4e4e4"></div><span style="position:relative;display:inline-block" onMouseEnter="{{c1.enter}}" onMouseLeave="{{c1.leave}}"><button type="button" class="chip" aria-label="Source source-1.org, preview passage" onFocus="{{c1.enter}}" style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #4a4a4a;padding:2px 9px 2px 5px;font-size:12px;cursor:pointer;color:#1a1a1a"><span style="width:11px;height:11px;border:1px solid #4a4a4a;display:inline-block"></span>source-1.org</button><button type="button" class="mk" aria-label="Show note 1" onClick="{{n1.toggle}}" style="{{n1.mk}}">1</button><sc-if value="{{n1.open}}" hint-placeholder-val="{{ false }}"><div role="note" style="position:absolute;bottom:calc(100% + 14px);left:0;z-index:60;width:300px;box-sizing:border-box;background:#fff;border:1px solid #1a1a1a;padding:14px 16px;font-size:14px;line-height:1.5;color:#1a1a1a;box-shadow:5px 5px 0 #d4d4d4;font-weight:400;text-align:left;white-space:normal;letter-spacing:0">Placing a source chip next to each claim lets researchers check it without leaving the answer. All 11 participants said a citation alone wasn't enough, so the chip previews the exact passage on hover. We recommend linking every claim.</div></sc-if><sc-if value="{{c1.open}}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;top:-10px;left:calc(100% + 16px);z-index:30;width:340px"><div style="background:#fff;border:1px solid #1a1a1a;box-shadow:5px 5px 0 #d4d4d4;padding:14px 14px 14px;display:flex;flex-direction:column;gap:12px;font-size:13px;line-height:1.4;text-align:left;white-space:normal;color:#1a1a1a">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:center;gap:7px"><span style="width:14px;height:14px;border:1px solid #4a4a4a;display:inline-block"></span>source-1.org</div><span style="font-size:12px;color:#6b6b6b">type · year</span></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:10px;width:92%;background:#c9c9c9"></div><div style="height:10px;width:58%;background:#c9c9c9"></div></div>
+<div style="border:1px solid #cfcfcf;padding:11px 12px"><div style="font-size:11px;letter-spacing:.06em;color:#6b6b6b;margin-bottom:8px">PASSAGE FROM THE SOURCE</div>
+<div style="display:flex;flex-direction:column;gap:9px"><div style="height:9px;width:100%;background:#e4e4e4"></div><div style="position:relative;height:9px;width:92%;background:#e4e4e4"><div style="position:absolute;left:22%;top:-3px;width:16%;height:15px;background:#ffe14d"></div></div><div style="height:9px;width:64%;background:#e4e4e4"></div></div></div>
+<div style="position:relative"><button type="button" class="btn" style="width:100%;background:#fff;border:1px solid #1a1a1a;padding:9px 12px;font-size:13.5px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px">Open full source <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"></path></svg></button><button type="button" class="mk" aria-label="Show note 2" onClick="{{n3.toggle}}" style="{{n3.mk}}">2</button><sc-if value="{{n3.open}}" hint-placeholder-val="{{ false }}"></sc-if></div>
+</div></div></sc-if></span></div></div></div></div></div><div style="margin-top:20px"><div style="font-size:14px;font-weight:600;margin-bottom:10px">Where studies find no clear effect</div>
+<div style="display:flex;gap:10px;align-items:flex-start"><div style="width:5px;height:5px;background:#1a1a1a;border-radius:50%;margin-top:8px;flex:none"></div>
+<div style="flex:1"><div style="display:flex;flex-direction:column;gap:8px;padding-top:3px"><div style="height:9px;width:82%;background:#e4e4e4"></div><div style="display:flex;align-items:center;gap:10px"><div style="height:9px;width:44%;background:#e4e4e4"></div><span style="position:relative;display:inline-block" onMouseEnter="{{c2.enter}}" onMouseLeave="{{c2.leave}}"><button type="button" class="chip" aria-label="Source source-2.org, preview passage" onFocus="{{c2.enter}}" style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #4a4a4a;padding:2px 9px 2px 5px;font-size:12px;cursor:pointer;color:#1a1a1a"><span style="width:11px;height:11px;border:1px solid #4a4a4a;display:inline-block"></span>source-2.org</button><sc-if value="{{c2.open}}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;top:100%;left:30px;padding-top:8px;z-index:30;width:380px"><div style="background:#fff;border:1px solid #1a1a1a;box-shadow:5px 5px 0 #d4d4d4;padding:14px 14px 14px;display:flex;flex-direction:column;gap:12px;font-size:13px;line-height:1.4;text-align:left;white-space:normal;color:#1a1a1a">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:center;gap:7px"><span style="width:14px;height:14px;border:1px solid #4a4a4a;display:inline-block"></span>source-2.org</div><span style="font-size:12px;color:#6b6b6b">type · year</span></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:10px;width:88%;background:#c9c9c9"></div><div style="height:10px;width:64%;background:#c9c9c9"></div></div>
+<div style="border:1px solid #cfcfcf;padding:11px 12px"><div style="font-size:11px;letter-spacing:.06em;color:#6b6b6b;margin-bottom:8px">PASSAGE FROM THE SOURCE</div>
+<div style="display:flex;flex-direction:column;gap:9px"><div style="height:9px;width:100%;background:#e4e4e4"></div><div style="position:relative;height:9px;width:92%;background:#e4e4e4"><div style="position:absolute;left:40%;top:-3px;width:16%;height:15px;background:#ffe14d"></div></div><div style="height:9px;width:64%;background:#e4e4e4"></div></div></div>
+<div style="position:relative"><button type="button" class="btn" style="width:100%;background:#fff;border:1px solid #1a1a1a;padding:9px 12px;font-size:13.5px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px">Open full source <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"></path></svg></button></div>
+</div></div></sc-if></span></div></div></div></div></div><div style="margin-top:20px"><div style="font-size:14px;font-weight:600;margin-bottom:10px">Where studies find declines</div>
+<div style="display:flex;gap:10px;align-items:flex-start"><div style="width:5px;height:5px;background:#1a1a1a;border-radius:50%;margin-top:8px;flex:none"></div>
+<div style="flex:1"><div style="display:flex;flex-direction:column;gap:8px;padding-top:3px"><div style="height:9px;width:88%;background:#e4e4e4"></div><div style="display:flex;align-items:center;gap:10px"><div style="height:9px;width:46%;background:#e4e4e4"></div><span style="position:relative;display:inline-block" onMouseEnter="{{c3.enter}}" onMouseLeave="{{c3.leave}}"><button type="button" class="chip" aria-label="Source source-3.org, preview passage" onFocus="{{c3.enter}}" style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #4a4a4a;padding:2px 9px 2px 5px;font-size:12px;cursor:pointer;color:#1a1a1a"><span style="width:11px;height:11px;border:1px solid #4a4a4a;display:inline-block"></span>source-3.org</button><sc-if value="{{c3.open}}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;bottom:100%;left:30px;padding-bottom:8px;z-index:30;width:380px"><div style="background:#fff;border:1px solid #1a1a1a;box-shadow:5px 5px 0 #d4d4d4;padding:14px 14px 14px;display:flex;flex-direction:column;gap:12px;font-size:13px;line-height:1.4;text-align:left;white-space:normal;color:#1a1a1a">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:center;gap:7px"><span style="width:14px;height:14px;border:1px solid #4a4a4a;display:inline-block"></span>source-3.org</div><span style="font-size:12px;color:#6b6b6b">type · year</span></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:10px;width:94%;background:#c9c9c9"></div><div style="height:10px;width:52%;background:#c9c9c9"></div></div>
+<div style="border:1px solid #cfcfcf;padding:11px 12px"><div style="font-size:11px;letter-spacing:.06em;color:#6b6b6b;margin-bottom:8px">PASSAGE FROM THE SOURCE</div>
+<div style="display:flex;flex-direction:column;gap:9px"><div style="height:9px;width:100%;background:#e4e4e4"></div><div style="position:relative;height:9px;width:92%;background:#e4e4e4"><div style="position:absolute;left:10%;top:-3px;width:16%;height:15px;background:#ffe14d"></div></div><div style="height:9px;width:64%;background:#e4e4e4"></div></div></div>
+<div style="position:relative"><button type="button" class="btn" style="width:100%;background:#fff;border:1px solid #1a1a1a;padding:9px 12px;font-size:13.5px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px">Open full source <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"></path></svg></button></div>
+</div></div></sc-if></span></div></div></div></div></div><div style="position:relative;margin-top:24px;background:#fff8d6;border:1px solid #4a4a4a;padding:14px 16px;display:flex;gap:12px;align-items:flex-start">
+<div style="width:22px;height:22px;flex:none;border:1px solid #1a1a1a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px">!</div>
+<div style="flex:1"><div style="font-size:14px;font-weight:600;margin-bottom:9px">Sources disagree on this point</div><div style="display:flex;flex-direction:column;gap:8px"><div style="height:9px;width:100%;background:#e4e4e4"></div><div style="height:9px;width:74%;background:#e4e4e4"></div></div></div>
+<button type="button" class="mk" aria-label="Show note 3" onClick="{{n5.toggle}}" style="{{n5.mk}}">3</button><sc-if value="{{n5.open}}" hint-placeholder-val="{{ false }}"><div role="note" style="position:absolute;bottom:calc(100% + 14px);left:0;z-index:60;width:340px;box-sizing:border-box;background:#fff;border:1px solid #1a1a1a;padding:14px 16px;font-size:14px;line-height:1.5;color:#1a1a1a;box-shadow:5px 5px 0 #d4d4d4;font-weight:400;text-align:left;white-space:normal;letter-spacing:0">10 of 11 participants read a confident tone as a red flag. When sources disagree, say so plainly instead of smoothing it into one answer.&nbsp;</div></sc-if></div>
+<div style="margin-top:16px"><button type="button" class="btn" style="background:#fff;border:1px solid #4a4a4a;padding:8px 14px;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:8px">Open all sources <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"></path></svg></button></div></div></div>
+</div>
+<div style="margin:0 26px 22px;border:1px solid #4a4a4a;padding:9px 10px 9px 14px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:14px;color:#6b6b6b">Ask anything</span><button type="button" class="btn" aria-label="Send" style="width:30px;height:30px;border:1px solid #4a4a4a;background:#fff;font-size:15px;cursor:pointer">↑</button></div>
+<sc-if value="{{n3.open}}" hint-placeholder-val="{{ true }}"><div role="note" style="position: absolute; top: 476px; z-index: 60; width: 300px; box-sizing: border-box; background: #fff; border: 1px solid #1a1a1a; padding: 14px 16px; font-size: 14px; line-height: 1.5; color: #1a1a1a; box-shadow: 5px 5px 0 #d4d4d4; font-weight: 400; text-align: left; white-space: normal; letter-spacing: 0; left: 663px">On high-stakes tasks, all participants left the chat to go to the source. An Open full source button on every citation makes that path fast.&nbsp;</div></sc-if></main></div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":860}}'>
+class Component extends DCLogic {
+  state = { active: 'c1', note: 'n3' };
+  renderVals() {
+    const a = this.state.active, n = this.state.note;
+    const chip = (id) => ({ open: a === id || (id === 'c1' && a === null), enter: () => this.setState({ active: id }), leave: () => this.setState({ active: null }) });
+    const base = 'position:absolute;top:-13px;right:-13px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;cursor:pointer;z-index:50;padding:0;';
+    const mk = (open) => base + (open ? 'background:#ffffff;color:#1a1a1a;border:1.5px solid #1a1a1a;' : 'background:#1a1a1a;color:#ffffff;border:1.5px solid #1a1a1a;');
+    const nt = (id) => ({ open: n === id, toggle: () => this.setState({ note: n === id ? null : id }), mk: mk(n === id) });
+    return { c1: chip('c1'), c2: chip('c2'), c3: chip('c3'), n1: nt('n1'), n3: nt('n3'), n5: Object.assign(nt('n5'), { mk: mk(n === 'n5').replace('top:-13px;right:-13px;', 'top:50%;left:-14px;margin-top:-14px;') }) };
+  }
+}
+</script>
+</body>
+</html>
